@@ -1305,6 +1305,60 @@ a:hover { color: var(--ts-primary); }
   position: relative;
   visibility: visible;
 }
+
+/* ═══════════════════════════════════════════
+   PAIN POINTS SECTION
+   ═══════════════════════════════════════════ */
+.ts-painpoints-section .cta-card {
+  height: 100%;
+  border-radius: var(--ts-radius);
+}
+.ts-painpoints-section .feature-icon i {
+  transition: transform 0.3s, color 0.3s;
+}
+.ts-painpoints-section .cta-card:hover .feature-icon i {
+  transform: scale(1.2);
+  color: var(--ts-primary-dark);
+}
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════ */
+.ts-cta-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0a1628 0%, #0d2137 50%, #0f2b4a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.ts-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -30%;
+  width: 600px; height: 600px;
+  background: rgba(13, 110, 253, 0.06);
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.ts-cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ts-cta-secondary:hover {
+  background: var(--ts-primary) !important;
+  border-color: var(--ts-primary) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(13,110,253,0.4);
+}
+@media (max-width: 575px) {
+  .ts-cta-section h2 { font-size: 1.8rem; }
+  .ts-cta-section .hero-btn,
+  .ts-cta-section .ts-cta-secondary { width: 100%; justify-content: center; }
+}
+
 </style>
 </head>
 
@@ -1463,17 +1517,17 @@ a:hover { color: var(--ts-primary); }
   <div class="hero-content" id="heroContent">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Trusted by businesses worldwide
+      Trusted by 150+ African Businesses
     </div>
-    <h1>Welcome to TechSavanna</h1>
-    <h2 class="hero-subtitle">We design, develop and deliver smart IT solutions — for businesses everywhere</h2>
+    <h1>Your Business Deserves Technology That Works as Hard as You Do</h1>
+    <h2 class="hero-subtitle">Streamline operations, boost productivity, and scale with confidence — technology that works for you</h2>
     <p class="up-type-title c-spacing">
-      We deliver for
-      <span id="typedText" class="animated-text">ERP Systems</span>
+      You can
+      <span id="typedText" class="animated-text">Grow Revenue Faster</span>
       <span class="typed-cursor">|</span>
     </p>
     <div class="hero-actions">
-      <a href="https://techsavanna.co.ke/solution/" class="hero-btn ts-magnetic">Learn More</a>
+      <a href="https://techsavanna.co.ke/contact-us/" class="hero-btn ts-magnetic">Get Your Free Consultation</a>
     </div>
   </div>
   <!-- RIGHT VIDEO -->
@@ -1489,35 +1543,79 @@ a:hover { color: var(--ts-primary); }
 <section class="ts-stats-section" id="tsStatsSection">
   <div class="container">
     <div class="ts-stats-grid">
-      <!-- Stat 1: Projects Delivered -->
+      <!-- Stat 1: Businesses Transformed -->
       <div class="ts-stat-card ts-reveal">
         <div class="ts-stat-icon"><i class="fas fa-project-diagram"></i></div>
         <div class="ts-stat-number"><span class="ts-counter" data-target="500">0</span><span class="ts-stat-suffix">+</span></div>
-        <div class="ts-stat-label">Projects Delivered</div>
+        <div class="ts-stat-label">Businesses Transformed</div>
       </div>
-      <!-- Stat 2: Happy Clients -->
+      <!-- Stat 2: Clients Trust Us -->
       <div class="ts-stat-card ts-reveal">
         <div class="ts-stat-icon"><i class="fas fa-smile"></i></div>
         <div class="ts-stat-number"><span class="ts-counter" data-target="150">0</span><span class="ts-stat-suffix">+</span></div>
-        <div class="ts-stat-label">Happy Clients</div>
+        <div class="ts-stat-label">Clients Trust Us</div>
       </div>
-      <!-- Stat 3: Years Experience -->
+      <!-- Stat 3: Years of Impact -->
       <div class="ts-stat-card ts-reveal">
         <div class="ts-stat-icon"><i class="fas fa-clock"></i></div>
         <div class="ts-stat-number"><span class="ts-counter" data-target="12">0</span><span class="ts-stat-suffix">+</span></div>
-        <div class="ts-stat-label">Years Experience</div>
+        <div class="ts-stat-label">Years of Impact</div>
       </div>
-      <!-- Stat 4: Team Members -->
+      <!-- Stat 4: Experts on Your Side -->
       <div class="ts-stat-card ts-reveal">
         <div class="ts-stat-icon"><i class="fas fa-users"></i></div>
         <div class="ts-stat-number"><span class="ts-counter" data-target="50">0</span><span class="ts-stat-suffix">+</span></div>
-        <div class="ts-stat-label">Team Members</div>
+        <div class="ts-stat-label">Experts on Your Side</div>
       </div>
     </div>
   </div>
 </section>
 <!-- ═══ END ANIMATED STATS COUNTER ═══ -->
-
+<!-- ═══ PAIN POINTS / CHALLENGES ═══ -->
+<section class="ts-painpoints-section ptb-60" id="tsPainPoints">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center ts-reveal">
+        <div class="section-heading">
+          <h4 class="h5">Challenges We Solve For You</h4>
+          <h2>Running Your Business Shouldn't Feel This Hard</h2>
+          <p>If any of these sound familiar, you're not alone — and we can help.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4 g-4">
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="cta-card rounded-custom text-center custom-shadow p-5 h-100">
+          <div class="feature-icon d-inline-block"><i class="fas fa-cogs" style="font-size:2.2rem;color:var(--ts-primary);"></i></div>
+          <h3>Struggling with Manual Processes?</h3>
+          <p>You're wasting hours on repetitive tasks that could be automated. Spreadsheets, paper forms, and manual data entry are slowing your team down and creating costly errors.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="cta-card rounded-custom text-center custom-shadow p-5 h-100">
+          <div class="feature-icon d-inline-block"><i class="fas fa-unlink" style="font-size:2.2rem;color:var(--ts-primary);"></i></div>
+          <h3>Data Scattered Across Systems?</h3>
+          <p>Your information lives in disconnected tools that don't talk to each other. You can't get a clear picture of your business when your data is fragmented everywhere.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="cta-card rounded-custom text-center custom-shadow p-5 h-100">
+          <div class="feature-icon d-inline-block"><i class="fas fa-chart-line" style="font-size:2.2rem;color:var(--ts-primary);"></i></div>
+          <h3>Can't Scale Your Operations?</h3>
+          <p>Your current systems buckle under growth. What worked for 10 people breaks at 50. You need technology that grows with you, not against you.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="cta-card rounded-custom text-center custom-shadow p-5 h-100">
+          <div class="feature-icon d-inline-block"><i class="fas fa-user-slash" style="font-size:2.2rem;color:var(--ts-primary);"></i></div>
+          <h3>Losing Customers to Poor Experience?</h3>
+          <p>Slow response times, dropped tickets, and inconsistent service are driving your customers away. Every lost customer is revenue you can't afford to lose.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END PAIN POINTS / CHALLENGES ═══ -->
 <!-- ==================== WHAT WE DO / SOLUTIONS ==================== -->
 <!-- Solutions section: reduced top padding to close gap after stats section -->
 <section class="work-section" style="padding: 20px 0 60px;">
@@ -1525,7 +1623,7 @@ a:hover { color: var(--ts-primary); }
     <div class="row justify-content-center align-content-center">
       <div class="col-md-10 col-lg-8">
         <div class="section-heading text-center ts-reveal">
-          <h4 class="h5">What we do</h4>
+          <h4 class="h5">Solutions Built for Your Success</h4>
           <div class="sectionimg">
             <img src="https://techsavanna.co.ke/wp-content/uploads/2026/01/products_servicesss.png" alt="Products and Services">
           </div>
@@ -1651,7 +1749,7 @@ a:hover { color: var(--ts-primary); }
     <div class="row justify-content-center align-content-center">
       <div class="col-md-10 col-lg-8">
         <div class="section-heading text-center ts-reveal">
-          <h4 class="h5">More Solutions</h4>
+          <h4 class="h5">More Ways We Help You Win</h4>
         </div>
       </div>
     </div>
@@ -1755,91 +1853,13 @@ a:hover { color: var(--ts-primary); }
     </div>
   </div>
 </section>
-<!-- ═══ END ADDITIONAL SOLUTIONS WITH CATEGORY TABS ═══ -->
-
-<!-- ==================== CLIENT LOGOS / PARTNERS ==================== -->
-<section class="work-section bg-light-subtle p-5">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-12 text-center">
-        <h2 class="section-title ts-reveal" style="color: #007bff; text-align: center; margin-bottom: 30px;">Our Partners</h2>
-      </div>
-    </div>
-    <div class="ts-partners-wrap">
-      <div class="ts-pages-container" id="tsPagesContainer">
-        <div class="ts-page active" data-page="0">
-          <div class="ts-logos-grid">
-            <div class="ts-logo-item"><a href="https://www.oracle.com/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/Asset-1.png" alt="Oracle"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/clientslider/good-firm/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/09/good-firm-logo.png" alt="Good Firm"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/aws-logo.png" alt="AWS"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsoft-365-logo.png" alt="Microsoft 365"></a></div>
-          </div>
-        </div>
-        <div class="ts-page" data-page="1">
-          <div class="ts-logos-grid">
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsof-azure-logo.png" alt="Microsoft Azure"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-07.png" alt="Equity"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-06.png" alt="St John"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-05.png" alt="Stanbic"></a></div>
-          </div>
-        </div>
-        <div class="ts-page" data-page="2">
-          <div class="ts-logos-grid">
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-04.png" alt="Britam"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-03.png" alt="Safaricom"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-02.png" alt="Kcb"></a></div>
-            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-01.png" alt="Teenovators"></a></div>
-          </div>
-        </div>
-      </div>
-      <div class="ts-dots" id="tsDotsWrap">
-        <button class="ts-dot active" data-page="0" aria-label="Page 1"></button>
-        <button class="ts-dot" data-page="1" aria-label="Page 2"></button>
-        <button class="ts-dot" data-page="2" aria-label="Page 3"></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== VIDEO SECTION ==================== -->
-<div class="videoarea">
-  <div class="container">
-    <div class="swiper video-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="video-wrapper">
-            <iframe data-src="https://www.youtube.com/embed/crynl8l-Zac" frameborder="0" allowfullscreen class="lazyload"></iframe>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_video.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="video-wrapper">
-            <video controls preload="metadata">
-              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_videoo.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ 3D FLIP SUCCESS STORY CARDS ═══ -->
+<!-- ═══ END ADDITIONAL SOLUTIONS WITH CATEGORY TABS ═══ --><!-- ═══ 3D FLIP SUCCESS STORY CARDS ═══ -->
 <section class="success-story-section pt-5 pb-5 bg-light-subtle">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center ts-reveal">
-        <h2 class="mb-3">Success Stories</h2>
-        <p>Our customers describe how Techsavanna provided tailored and efficient solutions to their IT needs. Hover or tap a card to see the full story.</p>
+        <h2 class="mb-3">Results Our Clients Achieve</h2>
+        <p>See the real outcomes businesses like yours have achieved with TechSavanna. Hover or tap a card to discover their transformation story.</p>
       </div>
     </div>
     <div class="row mt-4">
@@ -1926,111 +1946,14 @@ a:hover { color: var(--ts-primary); }
     </div>
   </div>
 </section>
-<!-- ═══ END 3D FLIP SUCCESS STORY CARDS ═══ -->
-
-<!-- ==================== WORK ROUTINE / PROCESS ==================== -->
-<section class="work-section bg-light-subtle ptb-60">
-  <div class="container">
-    <div class="row align-items-center justify-content-between">
-      <div class="col-lg-4">
-        <div class="mb-4 workblock ts-reveal-left">
-          <h4>Our Process</h4>
-          <h2>Work Routine</h2>
-          <p>Techsavanna provides top-notch software and IT solutions through an in-depth research, design, build, and deployment process. The customer's needs are taken into account throughout the process to ensure they receive a tailored solution that meets their requirements.</p>
-          <!-- Progress Bars showing process efficiency -->
-          <div class="ts-progress-wrap" id="tsProgressWrap">
-            <div class="ts-progress-item">
-              <div class="ts-progress-header">
-                <span class="ts-progress-label">Research</span>
-                <span class="ts-progress-pct">95%</span>
-              </div>
-              <div class="ts-progress-bar">
-                <div class="ts-progress-fill" data-width="95"></div>
-              </div>
-            </div>
-            <div class="ts-progress-item">
-              <div class="ts-progress-header">
-                <span class="ts-progress-label">Design</span>
-                <span class="ts-progress-pct">90%</span>
-              </div>
-              <div class="ts-progress-bar">
-                <div class="ts-progress-fill" data-width="90"></div>
-              </div>
-            </div>
-            <div class="ts-progress-item">
-              <div class="ts-progress-header">
-                <span class="ts-progress-label">Build</span>
-                <span class="ts-progress-pct">98%</span>
-              </div>
-              <div class="ts-progress-bar">
-                <div class="ts-progress-fill" data-width="98"></div>
-              </div>
-            </div>
-            <div class="ts-progress-item">
-              <div class="ts-progress-header">
-                <span class="ts-progress-label">Deliver</span>
-                <span class="ts-progress-pct">100%</span>
-              </div>
-              <div class="ts-progress-bar">
-                <div class="ts-progress-fill" data-width="100"></div>
-              </div>
-            </div>
-          </div>
-          <!-- ═══ END PROGRESS BARS ═══ -->
-        </div>
-      </div>
-      <div class="col-lg-8 workroutine">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="position-relative ts-reveal">
-              <div class="cta-card rounded-custom text-center custom-shadow p-5">
-                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/research.svg" alt="Research"></div>
-                <h3>Research</h3>
-                <p>Research allows us to gain a better understanding of the customer's needs and goals, as well as the market and the competition.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="position-relative ts-reveal">
-              <div class="cta-card rounded-custom text-center custom-shadow p-5">
-                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/build.svg" alt="Build"></div>
-                <h3>Build</h3>
-                <p>We use a variety of programming languages, development platforms, and frameworks to create fully functioning solutions that meet the customer's needs.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="position-relative ts-reveal">
-              <div class="cta-card rounded-custom text-center custom-shadow p-5">
-                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/design.svg" alt="Design"></div>
-                <h3>Design</h3>
-                <p>We use design to create effective, user-friendly solutions that meet the customer's needs, while also being visually appealing.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="position-relative ts-reveal">
-              <div class="cta-card rounded-custom text-center custom-shadow p-5">
-                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/deliver.svg" alt="Deliver"></div>
-                <h3>Deliver</h3>
-                <p>We ensure seamless deployment, thorough testing, and comprehensive training so that the solution is successfully integrated into the customer's operations and delivers measurable results.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== TESTIMONIALS ==================== -->
+<!-- ═══ END 3D FLIP SUCCESS STORY CARDS ═══ --><!-- ==================== TESTIMONIALS ==================== -->
 <section class="testimonal-section ptb-60">
   <div class="container">
     <div class="row justify-content-center align-content-center">
       <div class="col-md-10 col-lg-6 ts-reveal">
         <div class="section-heading text-center">
           <h4 class="h5">Testimonials</h4>
-          <h2>Reviews From Happy Clients</h2>
+          <h2>What Our Clients Say About Working With Us</h2>
         </div>
       </div>
     </div>
@@ -2068,6 +1991,349 @@ a:hover { color: var(--ts-primary); }
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WORK ROUTINE / PROCESS ==================== -->
+<section class="work-section bg-light-subtle ptb-60">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-4">
+        <div class="mb-4 workblock ts-reveal-left">
+          <h4>Your Journey to Success</h4>
+          <h2>How We Work With You</h2>
+          <p>We partner with you every step of the way — from understanding your challenges to delivering solutions that create real results for your business. Your success is our process.</p>
+          <!-- Progress Bars showing process efficiency -->
+          <div class="ts-progress-wrap" id="tsProgressWrap">
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">We Listen</span>
+                <span class="ts-progress-pct">95%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">We Design</span>
+                <span class="ts-progress-pct">90%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">We Build</span>
+                <span class="ts-progress-pct">98%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="98"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">You See Results</span>
+                <span class="ts-progress-pct">100%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="100"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ═══ END PROGRESS BARS ═══ -->
+        </div>
+      </div>
+      <div class="col-lg-8 workroutine">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/research.svg" alt="Research"></div>
+                <h3>We Listen to You</h3>
+                <p>We take the time to deeply understand your challenges, goals, and market — so every solution we build is tailored to what matters most to you.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/build.svg" alt="Build"></div>
+                <h3>We Build It For You</h3>
+                <p>Our expert team brings your solution to life using the latest technologies, building robust, scalable systems designed around your specific needs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/design.svg" alt="Design"></div>
+                <h3>We Design Your Solution</h3>
+                <p>We craft intuitive, beautiful solutions that your team will actually want to use — because the best technology is the one that feels effortless.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/deliver.svg" alt="Deliver"></div>
+                <h3>You See Results</h3>
+                <p>We ensure seamless deployment, thorough testing, and comprehensive training — so your team is confident from day one and you start seeing measurable results immediately.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLIENT LOGOS / PARTNERS ==================== -->
+<section class="work-section bg-light-subtle p-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="section-title ts-reveal" style="color: #007bff; text-align: center; margin-bottom: 30px;">The Ecosystem Powering Your Success</h2>
+      </div>
+    </div>
+    <div class="ts-partners-wrap">
+      <div class="ts-pages-container" id="tsPagesContainer">
+        <div class="ts-page active" data-page="0">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://www.oracle.com/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/Asset-1.png" alt="Oracle"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/clientslider/good-firm/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/09/good-firm-logo.png" alt="Good Firm"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/aws-logo.png" alt="AWS"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsoft-365-logo.png" alt="Microsoft 365"></a></div>
+          </div>
+        </div>
+        <div class="ts-page" data-page="1">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsof-azure-logo.png" alt="Microsoft Azure"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-07.png" alt="Equity"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-06.png" alt="St John"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-05.png" alt="Stanbic"></a></div>
+          </div>
+        </div>
+        <div class="ts-page" data-page="2">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-04.png" alt="Britam"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-03.png" alt="Safaricom"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-02.png" alt="Kcb"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-01.png" alt="Teenovators"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="ts-dots" id="tsDotsWrap">
+        <button class="ts-dot active" data-page="0" aria-label="Page 1"></button>
+        <button class="ts-dot" data-page="1" aria-label="Page 2"></button>
+        <button class="ts-dot" data-page="2" aria-label="Page 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VIDEO SECTION ==================== -->
+<div class="videoarea">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center ts-reveal">
+        <div class="section-heading">
+          <h2>See the Transformation in Action</h2>
+          <p>See how businesses like yours transform with TechSavanna</p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper video-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe data-src="https://www.youtube.com/embed/crynl8l-Zac" frameborder="0" allowfullscreen class="lazyload"></iframe>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_videoo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FAQ ACCORDION ═══ -->
+<section class="ts-faq-section bg-light-subtle" id="tsFaqSection">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center ts-reveal">
+        <div class="section-heading">
+          <h4 class="h5">Got Questions?</h4>
+          <h2>Frequently Asked Questions</h2>
+          <p>Answers to the questions our clients ask most — so you can make the best decision for your business.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="ts-faq-list">
+          <!-- FAQ 1 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>How quickly can I see results?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Most clients begin seeing measurable improvements within the first 30 days of implementation. Our phased approach means you get quick wins early — like automated workflows and consolidated data — while the full solution is deployed over 3 to 6 months. We prioritize the changes that impact your bottom line fastest, so you see ROI sooner rather than later.</div>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>Will this work with my existing systems?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Absolutely. Our solutions are designed to integrate seamlessly with the tools you already use. Whether it's your accounting software, CRM, HR platform, or legacy systems, we build integrations that keep your data flowing without disruption. During our discovery phase, we map out every integration point so there are no surprises — and no downtime for your team.</div>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>How much does it cost?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Every business is different, so we provide custom quotes based on your specific needs and scope. We offer flexible pricing models — from one-time project fees to subscription-based plans — so you can choose what works best for your budget. The best way to get accurate pricing is to schedule a free consultation where we'll understand your needs and provide a transparent, no-surprise proposal.</div>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>Do you offer training and support?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Yes! Through our dedicated training and upskilling arm, TSI (Techsavanna Training Institute), we provide comprehensive training programs for all our solutions. This includes on-site training, virtual instructor-led sessions, self-paced e-learning through ElimucoreLMS, and ongoing support. We ensure your team is fully equipped to maximize the value of your investment from day one, with refresher courses and advanced training available as your needs evolve.</div>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>How is TechSavanna different from other providers?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Three things set us apart: First, we're built for African businesses — we understand the unique challenges of operating in this market. Second, we offer end-to-end solutions, from software to training to ongoing support, so you're never piecing together multiple vendors. Third, we're ISO 9001:2015 certified and accredited by the ICT Authority, which means you're partnering with a provider that meets the highest standards of quality and compliance.</div>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>Can I start small and scale later?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Absolutely — and many of our most successful clients started exactly that way. Our solutions are modular by design, so you can begin with the features you need most and expand as your business grows. This approach means lower upfront investment, faster time-to-value, and the flexibility to adapt as your needs evolve. We'll help you plan a roadmap that makes sense for where you are today — and where you want to be tomorrow. <a href="https://techsavanna.co.ke/contact-us/" style="color:var(--ts-primary);font-weight:600;">Get started with a free consultation &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END FAQ ACCORDION ═══ -->
+<!-- ==================== CTA SECTION ==================== -->
+<section class="ts-cta-section" id="tsCtaSection">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center ts-reveal">
+        <h2>Ready to Transform Your Business?</h2>
+        <p style="color:var(--ts-text-light);font-size:1.1rem;margin-top:16px;margin-bottom:32px;">Join 150+ businesses across Africa that have already unlocked growth with TechSavanna. Your free consultation is just a click away.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="https://techsavanna.co.ke/contact-us/" class="hero-btn ts-magnetic" style="font-size:16px;padding:16px 36px;">Schedule a Free Consultation</a>
+          <a href="https://techsavanna.co.ke/contact-us/" class="ts-cta-secondary ts-magnetic" style="font-size:16px;padding:16px 36px;display:inline-flex;align-items:center;gap:8px;border-radius:50px;font-weight:600;color:#fff;border:2px solid var(--ts-primary);transition:all 0.4s;">Talk to Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== END CTA SECTION ==================== -->
+<!-- ==================== BLOG SECTION ==================== -->
+<section class="home-blog-section ptb-160">
+  <div class="container">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-6">
+        <div class="section-heading text-center ts-reveal">
+          <h4 class="h5">Blog</h4>
+          <h2>Insights to Help You Grow</h2>
+          <p>Assertively maximize cost effective methods of iterate team driven manufactured products through equity invested via customized benefits.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Blog row: justify-content-center centers the 2 col-lg-4 cards -->
+    <div class="row justify-content-center">
+      <!-- Blog Article 1: The Operating System for Modern African Businesses -->
+      <div class="col-lg-4 col-md-6">
+        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
+          <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/" class="article-img">
+            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_zfure4zfure4zfur.png" alt="The Operating System for Modern African Businesses">
+          </a>
+          <div class="article-content p-4">
+            <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/">
+              <h2 class="h5 article-title limit-2-line-text">The Operating System for Modern African Businesses</h2>
+            </a>
+            <p class="limit-2-line-text">Africa is not short on ambition; it is short on systems that move at the speed of that ambition. Across the continent, businesses are scaling in high-complexity environments. They navigate inconsistent connectivity, hybrid cash-to-digital economies, and evolving regulations. Most crucially, they lead teams that must learn while they build. Yet, the software running these businesses [...]</p>
+            <a href="javascript:;">
+              <div class="d-flex align-items-center pt-4">
+                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
+                <div class="avatar-info">
+                  <h6 class="mb-0 avatar-name">Admin</h6>
+                  <span class="small fw-medium text-muted">March 13, 2026</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Blog Article 2: What Is an ERP and When Does a Business Actually Need One? -->
+      <div class="col-lg-4 col-md-6">
+        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
+          <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/" class="article-img">
+            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_xcy8nlxcy8nlxcy8.png" alt="What Is an ERP and When Does a Business Actually Need One">
+          </a>
+          <div class="article-content p-4">
+            <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/">
+              <h2 class="h5 article-title limit-2-line-text">What Is an ERP and When Does a Business Actually Need One?</h2>
+            </a>
+            <p class="limit-2-line-text">As businesses grow, complexity sneaks in quietly. What starts as a simple operation with notebooks, spreadsheets, and a few disconnected tools can quickly turn into a maze of confusion, duplication, and costly mistakes. This is often the moment leaders start hearing about "ERP systems" and wondering if the investment is actually worth it. Let's slow [...]</p>
+            <a href="javascript:;">
+              <div class="d-flex align-items-center pt-4">
+                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
+                <div class="avatar-info">
+                  <h6 class="mb-0 avatar-name">Admin</h6>
+                  <span class="small fw-medium text-muted">January 7, 2026</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 text-center mt-5 ts-reveal">
+        <a href="https://techsavanna.co.ke/blog" class="mt-4 btn btn-primary ts-magnetic">View all Articles</a>
       </div>
     </div>
   </div>
@@ -2261,158 +2527,7 @@ a:hover { color: var(--ts-primary); }
     </div>
   </div>
 </section>
-<!-- END INTEGRATION SECTION -->
-
-<!-- ═══ FAQ ACCORDION ═══ -->
-<section class="ts-faq-section bg-light-subtle" id="tsFaqSection">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center ts-reveal">
-        <div class="section-heading">
-          <h4 class="h5">Got Questions?</h4>
-          <h2>Frequently Asked Questions</h2>
-          <p>Find answers to common questions about our services, solutions, and how we can help your business thrive.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12">
-        <div class="ts-faq-list">
-          <!-- FAQ 1 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>What services does Techsavanna offer?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">Techsavanna offers a comprehensive suite of services including bespoke software solutions, enterprise IT consulting, and business process outsourcing (BPO). Our product lineup includes Savanna360 ERP for enterprise resource planning, WorkWise HRM for human resource management, Engage CRM for customer relationship management, Document Management Systems, Farm Management Systems, and Time Tracking &amp; Attendance solutions. We also provide custom software development tailored to your specific business needs.</div>
-            </div>
-          </div>
-          <!-- FAQ 2 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>How long does it take to implement an ERP system?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">ERP implementation timelines vary based on the complexity and scale of your operations. A standard Savanna360 ERP deployment typically takes 3 to 6 months, including discovery, configuration, data migration, testing, and training phases. For larger enterprises with complex workflows, the timeline may extend to 9&ndash;12 months. Our team works closely with you to establish clear milestones and ensure a smooth, on-time delivery with minimal disruption to your business.</div>
-            </div>
-          </div>
-          <!-- FAQ 3 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>Do you offer custom software development?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">Yes! Our Bespoke solutions division specializes in building fully customized software tailored to your unique business requirements. Whether you need a specialized web application, mobile app, API integrations, or an entirely new platform, our experienced development team uses modern technologies and agile methodologies to deliver solutions that scale with your business. Every bespoke project includes thorough requirements analysis, iterative development, and comprehensive testing.</div>
-            </div>
-          </div>
-          <!-- FAQ 4 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>What industries do you serve?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">Techsavanna serves a diverse range of industries including banking &amp; finance, insurance, telecommunications, agriculture, healthcare, education, government &amp; public sector, retail, and manufacturing. Our solutions are designed to be industry-agnostic yet configurable to meet sector-specific compliance, workflow, and regulatory requirements. This flexibility has enabled us to successfully deploy solutions for leading organizations across East Africa and beyond.</div>
-            </div>
-          </div>
-          <!-- FAQ 5 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>Is training provided with your solutions?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">Absolutely. Through our dedicated training and upskilling arm, TSI (Techsavanna Training Institute), we provide comprehensive training programs for all our solutions. This includes on-site training, virtual instructor-led sessions, self-paced e-learning through ElimucoreLMS, and ongoing support. We ensure your team is fully equipped to maximize the value of your investment from day one, with refresher courses and advanced training available as your needs evolve.</div>
-            </div>
-          </div>
-          <!-- FAQ 6 -->
-          <div class="ts-faq-item ts-reveal">
-            <div class="ts-faq-question">
-              <span>How do I get a quote for my project?</span>
-              <span class="ts-faq-icon">+</span>
-            </div>
-            <div class="ts-faq-answer">
-              <div class="ts-faq-answer-inner">Getting a quote is easy! Simply visit our <a href="https://techsavanna.co.ke/contact-us/" style="color:var(--ts-primary);font-weight:600;">Contact Us</a> page and fill out the inquiry form with details about your project. You can also reach us directly via email or phone. Our team will schedule a discovery call to understand your requirements, after which we'll provide a detailed proposal including scope, timeline, and transparent pricing. We typically respond within 24 business hours.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ═══ END FAQ ACCORDION ═══ -->
-
-<!-- ==================== BLOG SECTION ==================== -->
-<section class="home-blog-section ptb-160">
-  <div class="container">
-    <div class="row justify-content-center align-content-center">
-      <div class="col-md-10 col-lg-6">
-        <div class="section-heading text-center ts-reveal">
-          <h4 class="h5">Blog</h4>
-          <h2>Our Latest News and Update</h2>
-          <p>Assertively maximize cost effective methods of iterate team driven manufactured products through equity invested via customized benefits.</p>
-        </div>
-      </div>
-    </div>
-    <!-- Blog row: justify-content-center centers the 2 col-lg-4 cards -->
-    <div class="row justify-content-center">
-      <!-- Blog Article 1: The Operating System for Modern African Businesses -->
-      <div class="col-lg-4 col-md-6">
-        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
-          <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/" class="article-img">
-            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_zfure4zfure4zfur.png" alt="The Operating System for Modern African Businesses">
-          </a>
-          <div class="article-content p-4">
-            <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/">
-              <h2 class="h5 article-title limit-2-line-text">The Operating System for Modern African Businesses</h2>
-            </a>
-            <p class="limit-2-line-text">Africa is not short on ambition; it is short on systems that move at the speed of that ambition. Across the continent, businesses are scaling in high-complexity environments. They navigate inconsistent connectivity, hybrid cash-to-digital economies, and evolving regulations. Most crucially, they lead teams that must learn while they build. Yet, the software running these businesses [...]</p>
-            <a href="javascript:;">
-              <div class="d-flex align-items-center pt-4">
-                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
-                <div class="avatar-info">
-                  <h6 class="mb-0 avatar-name">Admin</h6>
-                  <span class="small fw-medium text-muted">March 13, 2026</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Blog Article 2: What Is an ERP and When Does a Business Actually Need One? -->
-      <div class="col-lg-4 col-md-6">
-        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
-          <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/" class="article-img">
-            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_xcy8nlxcy8nlxcy8.png" alt="What Is an ERP and When Does a Business Actually Need One">
-          </a>
-          <div class="article-content p-4">
-            <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/">
-              <h2 class="h5 article-title limit-2-line-text">What Is an ERP and When Does a Business Actually Need One?</h2>
-            </a>
-            <p class="limit-2-line-text">As businesses grow, complexity sneaks in quietly. What starts as a simple operation with notebooks, spreadsheets, and a few disconnected tools can quickly turn into a maze of confusion, duplication, and costly mistakes. This is often the moment leaders start hearing about "ERP systems" and wondering if the investment is actually worth it. Let's slow [...]</p>
-            <a href="javascript:;">
-              <div class="d-flex align-items-center pt-4">
-                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
-                <div class="avatar-info">
-                  <h6 class="mb-0 avatar-name">Admin</h6>
-                  <span class="small fw-medium text-muted">January 7, 2026</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12 text-center mt-5 ts-reveal">
-        <a href="https://techsavanna.co.ke/blog" class="mt-4 btn btn-primary ts-magnetic">View all Articles</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== FOOTER ==================== -->
+<!-- END INTEGRATION SECTION --><!-- ==================== FOOTER ==================== -->
 <footer class="footer-section">
   <div class="footer-top bg-gradient text-white ptb-100">
     <div class="container">
@@ -2457,7 +2572,7 @@ a:hover { color: var(--ts-primary); }
         </div>
         <div class="col-md-8 col-lg-4 mb-md-4 mb-lg-0">
           <div class="footer-single-col">
-            <p>Our latest news, articles, and resources, will be sent to your inbox weekly.</p>
+            <p>Get expert insights and growth strategies delivered to your inbox weekly.</p>
             <form class="newsletter-form position-relative d-block d-lg-flex d-md-flex mt-3 mb-3">
               <input type="text" class="input-newsletter form-control me-2" placeholder="Enter your email" name="email" required autocomplete="off">
               <input type="submit" value="Subscribe" class="btn btn-primary mt-3 mt-lg-0 mt-md-0">
@@ -2809,7 +2924,7 @@ var Tawk_LoadStart = new Date();
   // ═══════════════════════════════════════════
   // 11. TYPING ANIMATION
   // ═══════════════════════════════════════════
-  var words = ["ERP Systems", "Web Applications", "Mobile Applications", "Cloud Solutions", "E-Commerce Platforms", "Custom Software"];
+  var words = ["Grow Revenue Faster", "Automate Your Operations", "Scale Without Limits", "Delight Your Customers", "Streamline Your Workflow", "Unlock Your Potential"];
   var wordIndex = 0, charIndex = 0, isDeleting = false;
   var typingSpeed = 90, deletingSpeed = 50, delayBetweenWords = 1200;
   var typedText = document.getElementById("typedText");
