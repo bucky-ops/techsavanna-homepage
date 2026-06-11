@@ -2,15 +2,11 @@
 
 > Enhanced homepage for [TechSavanna Kenya](https://techsavanna.co.ke/) — featuring 3D design, interactive cards, mouse tracking effects, and modern UI.
 
----
-
 ## Overview
 
 This is the enhanced, standalone homepage for TechSavanna Kenya. Built as a single self-contained HTML file with embedded CSS and JavaScript, it features cutting-edge web design patterns including 3D transformations, interactive card animations, custom cursor effects, and a fully responsive layout.
 
 **Live Site:** [techsavanna.co.ke](https://techsavanna.co.ke/)
-
----
 
 ## Features
 
@@ -52,8 +48,6 @@ This is the enhanced, standalone homepage for TechSavanna Kenya. Built as a sing
 - FAQ accordion
 - Newsletter signup & footer
 
----
-
 ## Tech Stack
 
 - **HTML5** — Semantic markup
@@ -63,8 +57,6 @@ This is the enhanced, standalone homepage for TechSavanna Kenya. Built as a sing
 - **Font Awesome 6.5** — Icons
 - **Google Fonts** — Poppins + Lato
 - **Swiper 11** — Carousel/slider functionality
-
----
 
 ## Deployment
 
@@ -79,8 +71,6 @@ This project is designed for static hosting and works with any static site host:
 ### Netlify / GitHub Pages / Any Static Host
 Just serve the root directory. The `index.html` file is self-contained.
 
----
-
 ## File Structure
 
 ```
@@ -90,15 +80,11 @@ techsavanna-homepage/
 └── README.md           # This file
 ```
 
----
-
 ## Credits
 
 - **Design & Development:** TechSavanna Kenya
 - **Original Site:** [techsavanna.co.ke](https://techsavanna.co.ke/)
 - **Enhanced Version:** v3.0 with 3D effects, interactive cards, and mouse tracking
-
----
 
 ## License
 
