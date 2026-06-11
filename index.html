@@ -1,0 +1,3157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<title>Techsavanna</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="icon" href="https://techsavanna.co.ke/wp-content/uploads/2024/08/favicon.jpg" sizes="192x192">
+<link rel="icon" href="https://techsavanna.co.ke/wp-content/uploads/2024/08/favicon-50x50.jpg" sizes="32x32">
+<link rel="apple-touch-icon" href="https://techsavanna.co.ke/wp-content/uploads/2024/08/favicon.jpg">
+
+<!-- ===================== ENHANCED STYLES ===================== -->
+<style>
+/* ── CSS Variables ── */
+:root {
+  --ts-primary: #007bff;
+  --ts-primary-dark: #0056b3;
+  --ts-accent: #0d6efd;
+  --ts-dark: #0a0a0a;
+  --ts-text: #333;
+  --ts-text-light: #666;
+  --ts-bg-light: #f8f9fa;
+  --ts-white: #fff;
+  --ts-radius: 12px;
+  --ts-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  --ts-shadow-hover: 0 20px 60px rgba(0,0,0,0.15);
+  --ts-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ts-font-primary: 'Poppins', sans-serif;
+  --ts-font-secondary: 'Lato', sans-serif;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ts-font-primary);
+  color: var(--ts-text);
+  background: var(--ts-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; transition: color 0.3s; }
+a:hover { color: var(--ts-primary); }
+
+/* ── Custom Cursor ── */
+.ts-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ts-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transition: transform 0.15s ease, width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+.ts-cursor.active {
+  width: 50px;
+  height: 50px;
+  background: rgba(13, 110, 253, 0.1);
+  border-color: var(--ts-accent);
+}
+.ts-cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--ts-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease;
+}
+@media (max-width: 991px) {
+  .ts-cursor, .ts-cursor-dot { display: none !important; }
+}
+
+/* ── 3D Scene Container ── */
+.ts-3d-scene {
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+}
+
+/* ── Floating 3D Geometric Shapes ── */
+.ts-geo-shapes {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.ts-geo-shape {
+  position: absolute;
+  border: 2px solid rgba(13, 110, 253, 0.08);
+  border-radius: 4px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+.ts-geo-shape:nth-child(1) {
+  width: 80px; height: 80px; top: 10%; left: 5%;
+  animation: tsGeoFloat1 20s ease-in-out infinite;
+}
+.ts-geo-shape:nth-child(2) {
+  width: 60px; height: 60px; top: 20%; right: 10%;
+  border-radius: 50%;
+  animation: tsGeoFloat2 25s ease-in-out infinite;
+}
+.ts-geo-shape:nth-child(3) {
+  width: 100px; height: 100px; bottom: 30%; left: 8%;
+  animation: tsGeoFloat3 22s ease-in-out infinite;
+}
+.ts-geo-shape:nth-child(4) {
+  width: 50px; height: 50px; top: 50%; right: 5%;
+  border-radius: 50%;
+  animation: tsGeoFloat4 18s ease-in-out infinite;
+}
+.ts-geo-shape:nth-child(5) {
+  width: 70px; height: 70px; bottom: 15%; right: 15%;
+  animation: tsGeoFloat5 24s ease-in-out infinite;
+}
+@keyframes tsGeoFloat1 {
+  0%, 100% { transform: rotateX(0deg) rotateY(0deg) translate3d(0,0,0); }
+  25% { transform: rotateX(45deg) rotateY(45deg) translate3d(20px,-30px,40px); }
+  50% { transform: rotateX(90deg) rotateY(90deg) translate3d(-15px,20px,-20px); }
+  75% { transform: rotateX(135deg) rotateY(45deg) translate3d(10px,-10px,30px); }
+}
+@keyframes tsGeoFloat2 {
+  0%, 100% { transform: rotateX(0deg) rotateZ(0deg) translate3d(0,0,0); }
+  33% { transform: rotateX(120deg) rotateZ(60deg) translate3d(-20px,25px,35px); }
+  66% { transform: rotateX(240deg) rotateZ(120deg) translate3d(15px,-20px,-15px); }
+}
+@keyframes tsGeoFloat3 {
+  0%, 100% { transform: rotateY(0deg) rotateZ(0deg) translate3d(0,0,0); }
+  50% { transform: rotateY(180deg) rotateZ(90deg) translate3d(-25px,15px,45px); }
+}
+@keyframes tsGeoFloat4 {
+  0%, 100% { transform: rotateX(0deg) translate3d(0,0,0); }
+  50% { transform: rotateX(360deg) translate3d(20px,-15px,25px); }
+}
+@keyframes tsGeoFloat5 {
+  0%, 100% { transform: rotateY(0deg) rotateX(0deg) translate3d(0,0,0); }
+  33% { transform: rotateY(120deg) rotateX(60deg) translate3d(-10px,20px,30px); }
+  66% { transform: rotateY(240deg) rotateX(120deg) translate3d(15px,-25px,-10px); }
+}
+
+/* ── Mouse Glow Trail ── */
+.ts-mouse-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,110,253,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+
+/* ── Particle Canvas ── */
+#tsParticleCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.header-area {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  transition: background 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
+}
+.header-area.scrolled {
+  position: fixed;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+}
+.header-area.scrolled .header__logo .dark-logo { display: inline-block !important; }
+.header-area.scrolled .header__logo .light-logo { display: none !important; }
+.header-area.scrolled .navigation-menu > ul > li > a { color: #333; }
+.header-area.scrolled .header-search-form .search-field { color: #333; border-color: #ddd; }
+.header-bottom-wrap { padding: 15px 0; }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo a { display: inline-block; }
+.header__logo .dark-logo { display: none; }
+.header__logo img { height: 42px; width: auto; }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.navigation-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0; padding: 0;
+}
+.navigation-menu > ul > li > a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  position: relative;
+}
+.navigation-menu > ul > li > a:hover {
+  background: rgba(13,110,253,0.1);
+  color: var(--ts-primary);
+}
+.navigation-menu > ul > li.menu-item-has-children > a::after {
+  content: '\f078';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 10px;
+  margin-left: 6px;
+}
+.navigation-menu .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border-radius: var(--ts-radius);
+  box-shadow: var(--ts-shadow-hover);
+  min-width: 250px;
+  padding: 12px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  list-style: none;
+  z-index: 999;
+}
+.navigation-menu > ul > li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.sub-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s;
+}
+.sub-menu li a:hover {
+  background: rgba(13,110,253,0.05);
+  color: var(--ts-primary);
+  padding-left: 26px;
+}
+.header-search-form {
+  position: relative;
+}
+.header-search-form .search-field {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 30px;
+  padding: 8px 40px 8px 16px;
+  color: #fff;
+  font-size: 14px;
+  width: 180px;
+  transition: all 0.3s;
+  outline: none;
+}
+.header-search-form .search-field:focus {
+  width: 240px;
+  border-color: var(--ts-primary);
+  background: rgba(255,255,255,0.15);
+}
+.header-search-form .search-submit {
+  position: absolute;
+  right: 4px; top: 4px;
+  background: var(--ts-primary);
+  border: none;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.header-search-form .search-submit:hover { background: var(--ts-primary-dark); }
+
+/* Mobile Menu */
+.mobile-navigation-icon { cursor: pointer; display: none; }
+.mobile-navigation-icon i, .mobile-navigation-icon i::before, .mobile-navigation-icon i::after {
+  display: block; width: 24px; height: 2px;
+  background: #fff; transition: all 0.3s; position: relative;
+}
+.mobile-navigation-icon i::before, .mobile-navigation-icon i::after { content: ''; position: absolute; left: 0; }
+.mobile-navigation-icon i::before { top: -7px; }
+.mobile-navigation-icon i::after { top: 7px; }
+.mobile-menu-overlay {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 10000;
+  opacity: 0; visibility: hidden;
+  transition: all 0.4s;
+}
+.mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+.mobile-menu-overlay__inner {
+  position: absolute; right: 0; top: 0;
+  width: 320px; max-width: 90vw;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-y: auto;
+}
+.mobile-menu-overlay.active .mobile-menu-overlay__inner { transform: translateX(0); }
+.mobile-menu-overlay__header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+.mobile-navigation-close-icon {
+  font-size: 24px; cursor: pointer; color: #333;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; transition: background 0.3s;
+}
+.mobile-navigation-close-icon:hover { background: #f0f0f0; }
+.offcanvas-navigation ul { list-style: none; padding: 20px; }
+.offcanvas-navigation ul li a {
+  display: block; padding: 12px 0; font-size: 16px; color: #333;
+  border-bottom: 1px solid #f0f0f0; transition: color 0.3s;
+}
+.offcanvas-navigation ul li a:hover { color: var(--ts-primary); }
+.offcanvas-navigation .sub-menu { padding-left: 16px; display: none; }
+.offcanvas-navigation .menu-expand { cursor: pointer; float: right; padding: 12px; }
+
+@media (max-width: 1199px) {
+  .header__navigation.d-none { display: none !important; }
+  .mobile-navigation-icon { display: block !important; }
+}
+@media (min-width: 1200px) {
+  .header__navigation.d-none { display: block !important; }
+  .mobile-navigation-icon { display: none !important; }
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION (3D Enhanced)
+   ═══════════════════════════════════════════ */
+.hero-split {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 140px 60px 80px;
+  background: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #0f2b4a 60%, #0d1f35 100%);
+  overflow: hidden;
+}
+.hero-split::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(13,110,253,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(0,123,255,0.05) 0%, transparent 40%);
+  animation: heroBgShift 15s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes heroBgShift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(2%, -1%) rotate(1deg); }
+  66% { transform: translate(-1%, 2%) rotate(-0.5deg); }
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-orb-1 {
+  width: 450px; height: 450px;
+  background: rgba(13, 110, 253, 0.1);
+  filter: blur(100px);
+  top: -100px; left: -80px;
+}
+.hero-orb-2 {
+  width: 280px; height: 280px;
+  background: rgba(30, 115, 190, 0.08);
+  filter: blur(70px);
+  bottom: 30px; left: 200px;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 560px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 110, 253, 0.12);
+  border: 1px solid rgba(13, 110, 253, 0.3);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4da3ff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px;
+  background: #0d6efd;
+  border-radius: 50%;
+  animation: heroDotPulse 2s infinite;
+}
+@keyframes heroDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+.up-type-title {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.animated-text {
+  color: #4da3ff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.typed-cursor {
+  color: #4da3ff;
+  font-weight: 100;
+  animation: cursorBlink 0.7s infinite;
+}
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.hero-actions { margin-top: 1.5rem; }
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--ts-primary), var(--ts-accent));
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.4s;
+  box-shadow: 0 8px 30px rgba(13,110,253,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+.hero-btn:hover::before { left: 100%; }
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(13,110,253,0.4);
+  color: #fff !important;
+}
+.hero-video-wrapper {
+  position: relative; z-index: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  max-width: 560px;
+}
+.hero-video-wrapper video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+.hero-sound-btn {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex; align-items: center; gap: 6px;
+}
+.hero-sound-btn:hover { background: rgba(13,110,253,0.8); }
+
+@media (max-width: 991px) {
+  .hero-split {
+    flex-direction: column;
+    padding: 120px 24px 60px;
+    gap: 40px;
+  }
+  .hero-content { max-width: 100%; text-align: center; }
+  .hero-badge { margin-left: auto; margin-right: auto; }
+  .hero-content h1 { font-size: 2.4rem; }
+  .hero-video-wrapper { max-width: 100%; }
+}
+
+/* ═══════════════════════════════════════════
+   SECTION COMMON
+   ═══════════════════════════════════════════ */
+.ptb-60 { padding: 60px 0; }
+.ptb-120 { padding: 120px 0; }
+.ptb-160 { padding: 160px 0; }
+.bg-light-subtle { background: #fafbfc; }
+.section-heading h4 { color: var(--ts-primary); font-weight: 600; margin-bottom: 8px; }
+.section-heading h2 { font-size: 2.2rem; font-weight: 700; color: var(--ts-dark); }
+.section-heading p { color: var(--ts-text-light); max-width: 600px; margin: 12px auto 0; }
+
+/* ── 3D Tilt Card ── */
+.ts-tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+.ts-tilt-card:hover {
+  box-shadow: var(--ts-shadow-hover);
+}
+.ts-tilt-card .ts-tilt-inner {
+  transform: translateZ(30px);
+  transition: transform 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════
+   SOLUTIONS SECTION
+   ═══════════════════════════════════════════ */
+.sol-wrap { width: 100%; overflow: hidden; position: relative; }
+.sol-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.sol-slide { flex: 0 0 100%; width: 100%; min-width: 100%; box-sizing: border-box; padding: 4px 2px 12px; }
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 22px;
+}
+@media (max-width: 1199px) { .sol-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) { .sol-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 420px) { .sol-grid { grid-template-columns: 1fr; } }
+
+.sol-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ts-radius);
+  overflow: hidden;
+  background: #fff;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.sol-card:hover {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+.sol-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f3f3f3;
+  flex-shrink: 0;
+}
+.sol-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.sol-card:hover .sol-img-wrap img { transform: scale(1.05); }
+.sol-card .cardinfo {
+  padding: 20px;
+  text-align: center;
+}
+.sol-card .cardinfo h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+.sol-card .cardinfo h4 { font-size: 0.85rem; color: #888; font-weight: 400; margin-bottom: 8px; }
+.sol-card .cardinfo p { font-size: 0.9rem; color: #666; line-height: 1.5; }
+.readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ts-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: gap 0.3s;
+}
+.readmore:hover { gap: 10px; }
+.readmore img { width: 16px; height: 16px; }
+
+.sol-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.75rem;
+}
+.sol-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none; padding: 0;
+  cursor: pointer; outline: none;
+  transition: background 0.25s, transform 0.2s;
+}
+.sol-dot.active { background: var(--ts-primary); transform: scale(1.35); }
+.sol-dot:hover:not(.active) { background: #888; transform: scale(1.15); }
+
+/* ═══════════════════════════════════════════
+   PARTNERS SECTION
+   ═══════════════════════════════════════════ */
+.ts-partners-wrap { width: 100%; }
+.ts-pages-container { position: relative; overflow: hidden; min-height: 140px; }
+.ts-page { display: none; animation: tsFadeIn 0.4s ease; }
+.ts-page.active { display: block; }
+@keyframes tsFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ts-logos-grid {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  gap: 20px; padding: 10px 0 20px;
+}
+.ts-logo-item { flex: 0 0 auto; width: calc(25% - 20px); }
+@media (max-width: 991px) { .ts-logo-item { width: calc(33.333% - 20px); } }
+@media (max-width: 575px) { .ts-logo-item { width: calc(50% - 20px); } }
+.ts-logo-card {
+  display: flex; align-items: center; justify-content: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 18px 22px;
+  min-height: 90px;
+  transition: box-shadow 0.25s, transform 0.25s;
+  width: 100%;
+}
+.ts-logo-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+.ts-logo-card img {
+  max-width: 120px; max-height: 55px;
+  object-fit: contain; display: block;
+  filter: grayscale(30%); opacity: 0.85;
+  transition: filter 0.25s, opacity 0.25s;
+}
+.ts-logo-card:hover img { filter: grayscale(0%); opacity: 1; }
+.ts-dots {
+  display: flex; justify-content: center; align-items: center;
+  gap: 10px; margin-top: 1.5rem;
+}
+.ts-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #ccc; border: none; padding: 0;
+  cursor: pointer; transition: background 0.25s, transform 0.2s; outline: none;
+}
+.ts-dot.active { background: var(--ts-primary); transform: scale(1.35); }
+.ts-dot:hover:not(.active) { background: #888; transform: scale(1.15); }
+
+/* ═══════════════════════════════════════════
+   VIDEO SECTION
+   ═══════════════════════════════════════════ */
+.videoarea { padding: 40px 0; }
+.video-wrapper {
+  border-radius: var(--ts-radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.video-wrapper iframe, .video-wrapper video {
+  width: 100%; height: 100%; display: block;
+  border: none;
+}
+
+/* ═══════════════════════════════════════════
+   SUCCESS STORY
+   ═══════════════════════════════════════════ */
+.success-story-section h2 { font-size: 2rem; font-weight: 700; }
+
+/* ═══════════════════════════════════════════
+   WORK ROUTINE (3D Flip Cards)
+   ═══════════════════════════════════════════ */
+.cta-card {
+  background: #fff;
+  border: 1px solid #eee;
+  transition: transform 0.4s, box-shadow 0.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.cta-card:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: var(--ts-shadow-hover);
+}
+.feature-icon { margin-bottom: 16px; }
+.feature-icon img { width: 48px; height: 48px; }
+.cta-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+.cta-card p { font-size: 0.95rem; color: #666; line-height: 1.6; }
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════ */
+.testimonal-section .ev-single-testimonial {
+  background: #fff;
+  border-radius: var(--ts-radius);
+  padding: 30px;
+  box-shadow: var(--ts-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonal-section .ev-single-testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ts-shadow-hover);
+}
+.rating-list i { color: #fbb040 !important; }
+.ev-single-testimonial p { font-size: 0.95rem; color: #555; line-height: 1.7; font-style: italic; }
+.ev-single-testimonial img { width: 80px !important; height: 80px !important; border-radius: 50%; object-fit: cover; margin: 16px auto; }
+.ev-single-testimonial h5 { font-size: 0.95rem; font-weight: 600; color: #333; }
+
+/* ═══════════════════════════════════════════
+   CREDENTIALS
+   ═══════════════════════════════════════════ */
+.cert-section .connected-app-single {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--ts-radius);
+  transition: transform 0.4s, box-shadow 0.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.cert-section .connected-app-single:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--ts-shadow-hover);
+}
+
+/* ═══════════════════════════════════════════
+   BLOG
+   ═══════════════════════════════════════════ */
+.single-article {
+  background: #fff;
+  border-radius: var(--ts-radius);
+  overflow: hidden;
+  box-shadow: var(--ts-shadow);
+  transition: transform 0.4s, box-shadow 0.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.single-article:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ts-shadow-hover);
+}
+.article-img {
+  display: block;
+  overflow: hidden;
+}
+.article-img img {
+  width: 100%; height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.single-article:hover .article-img img { transform: scale(1.08); }
+.article-content { padding: 20px; }
+.article-title { font-size: 1.1rem; font-weight: 700; color: #333; margin-bottom: 8px; }
+.article-title:hover { color: var(--ts-primary); }
+.article-content p { font-size: 0.9rem; color: #666; line-height: 1.6; }
+.limit-2-line-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.avatar img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.avatar-name { font-size: 0.85rem; font-weight: 600; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer-section { background: #0a1628; }
+.footer-top { padding: 80px 0 60px; }
+.footerlogo img { height: 42px; margin-bottom: 20px; }
+.footertext p { color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; }
+.footertext strong { color: #fff; }
+.footer-single-col h3 {
+  font-size: 1.1rem; font-weight: 700; color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+.footer-single-col h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 3px;
+  background: var(--ts-primary);
+  border-radius: 2px;
+}
+.footer-nav-list li { margin-bottom: 10px; }
+.footer-nav-list a {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  transition: color 0.3s, padding-left 0.3s;
+}
+.footer-nav-list a:hover { color: var(--ts-primary); padding-left: 5px; }
+.newsletter-form .input-newsletter {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 20px;
+}
+.newsletter-form .input-newsletter::placeholder { color: rgba(255,255,255,0.4); }
+.newsletter-form .btn-primary {
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 600;
+  background: var(--ts-primary);
+  border-color: var(--ts-primary);
+}
+.footer-social-list a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s;
+}
+.footer-social-list a:hover {
+  background: var(--ts-primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); }
+.copyright-text p { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.ts-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.ts-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ts-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.ts-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.ts-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.ts-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══════════════════════════════════════════
+   MAGNETIC BUTTONS
+   ═══════════════════════════════════════════ */
+.ts-magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-block;
+}
+
+/* ═══════════════════════════════════════════
+   MODAL STYLES
+   ═══════════════════════════════════════════ */
+.modal-content { border-radius: var(--ts-radius); border: none; }
+.modal-header { border-bottom: 1px solid #eee; }
+.modal-body img { width: 100%; border-radius: 8px; }
+
+/* ═══════════════════════════════════════════
+   SMOOTH PARALLAX ELEMENTS
+   ═══════════════════════════════════════════ */
+[data-parallax] {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATED STATS COUNTER
+   ═══════════════════════════════════════════ */
+/* Stats section: reduced bottom padding to minimize gap before solutions section */
+.ts-stats-section {
+  background: linear-gradient(135deg, #0a1628 0%, #0d2137 50%, #0f2b4a 100%);
+  padding: 60px 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+/* Decorative background orbs for stats section */
+.ts-stats-section::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -30%;
+  width: 600px; height: 600px;
+  background: rgba(13, 110, 253, 0.06);
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.ts-stats-section::after {
+  content: '';
+  position: absolute;
+  bottom: -40%; right: -20%;
+  width: 400px; height: 400px;
+  background: rgba(0, 123, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.ts-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 991px) { .ts-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+@media (max-width: 575px) { .ts-stats-grid { grid-template-columns: 1fr; } }
+.ts-stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--ts-radius);
+  padding: 40px 24px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: default;
+}
+.ts-stat-card:hover {
+  transform: translateY(-6px) rotateX(2deg);
+  box-shadow: 0 20px 50px rgba(13,110,253,0.2);
+  border-color: rgba(13,110,253,0.3);
+}
+.ts-stat-icon {
+  font-size: 2.2rem;
+  color: var(--ts-primary);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.ts-stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.ts-stat-number .ts-stat-suffix {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ts-primary);
+}
+.ts-stat-label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+}
+
+/* ═══════════════════════════════════════════
+   3D FLIP SUCCESS STORY CARDS
+   ═══════════════════════════════════════════ */
+.ts-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1199px) { .ts-flip-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575px) { .ts-flip-grid { grid-template-columns: 1fr; } }
+.ts-flip-card {
+  perspective: 1200px;
+  height: 340px;
+  cursor: pointer;
+}
+.ts-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ts-flip-card:hover .ts-flip-card-inner,
+.ts-flip-card.flipped .ts-flip-card-inner {
+  transform: rotateY(180deg);
+}
+.ts-flip-face {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--ts-radius);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Front face of flip card */
+.ts-flip-front {
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  text-align: center;
+}
+.ts-flip-front .ts-flip-icon {
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, var(--ts-primary), var(--ts-accent));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.ts-flip-front .ts-flip-industry {
+  font-size: 0.8rem;
+  color: var(--ts-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.ts-flip-front h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ts-dark);
+  margin-bottom: 10px;
+}
+.ts-flip-front .ts-flip-teaser {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+.ts-flip-front .ts-flip-hint {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: var(--ts-primary);
+  font-weight: 500;
+}
+/* Back face of flip card */
+.ts-flip-back {
+  background: linear-gradient(135deg, #0a1628, #0d2137);
+  transform: rotateY(180deg);
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+.ts-flip-back h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ts-primary);
+}
+.ts-flip-back .ts-flip-testimonial {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.ts-flip-back .ts-flip-result {
+  font-size: 0.85rem;
+  color: #4da3ff;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.ts-flip-back .ts-flip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: gap 0.3s, color 0.3s;
+  margin-top: auto;
+}
+.ts-flip-back .ts-flip-link:hover { gap: 10px; color: var(--ts-primary); }
+
+/* ═══════════════════════════════════════════
+   FAQ ACCORDION
+   ═══════════════════════════════════════════ */
+.ts-faq-section { padding: 80px 0; }
+.ts-faq-list { max-width: 800px; margin: 0 auto; }
+.ts-faq-item {
+  border: 1px solid #eee;
+  border-radius: var(--ts-radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+.ts-faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.ts-faq-item.active { box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-color: rgba(13,110,253,0.2); }
+.ts-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ts-dark);
+  transition: color 0.3s;
+  gap: 16px;
+}
+.ts-faq-question:hover { color: var(--ts-primary); }
+.ts-faq-icon {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(13,110,253,0.08);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.4s, background 0.3s;
+  font-size: 1.2rem;
+  color: var(--ts-primary);
+  line-height: 1;
+}
+.ts-faq-item.active .ts-faq-icon {
+  transform: rotate(45deg);
+  background: var(--ts-primary);
+  color: #fff;
+}
+.ts-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+  padding: 0 24px;
+}
+.ts-faq-answer-inner {
+  padding-bottom: 20px;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+}
+.ts-faq-item.active .ts-faq-answer {
+  max-height: 300px;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════
+   RIPPLE EFFECT ON BUTTONS
+   ═══════════════════════════════════════════ */
+.hero-btn, .btn, .ts-magnetic, button[class*="btn"] {
+  position: relative;
+  overflow: hidden;
+}
+.ts-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  transform: scale(0);
+  animation: tsRippleAnim 0.6s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes tsRippleAnim {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   PROGRESS BARS IN WORK ROUTINE
+   ═══════════════════════════════════════════ */
+.ts-progress-wrap {
+  margin-top: 30px;
+}
+.ts-progress-item {
+  margin-bottom: 20px;
+}
+.ts-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.ts-progress-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ts-dark);
+}
+.ts-progress-pct {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ts-primary);
+}
+.ts-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ts-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ts-primary), var(--ts-accent));
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════
+   SOLUTION CATEGORY TABS
+   ═══════════════════════════════════════════ */
+.ts-sol-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.ts-sol-tab {
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 2px solid #ddd;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: var(--ts-font-primary);
+}
+.ts-sol-tab:hover {
+  border-color: var(--ts-primary);
+  color: var(--ts-primary);
+}
+.ts-sol-tab.active {
+  background: var(--ts-primary);
+  border-color: var(--ts-primary);
+  color: #fff;
+}
+/* Fade transition for filtered solution cards */
+.ts-sol-filtered {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.ts-sol-filtered.ts-hidden {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+.ts-sol-filtered.ts-visible {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+  visibility: visible;
+}
+</style>
+</head>
+
+<body class="home wp-singular page-template-default page page-id-5 wp-theme-techsavanna theme-techsavanna woocommerce-js">
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="ts-cursor" id="tsCursor"></div>
+<div class="ts-cursor-dot" id="tsCursorDot"></div>
+
+<!-- ===================== MOUSE GLOW ===================== -->
+<div class="ts-mouse-glow" id="tsMouseGlow"></div>
+
+<!-- ===================== 3D GEOMETRIC SHAPES ===================== -->
+<div class="ts-geo-shapes" id="tsGeoShapes">
+  <div class="ts-geo-shape"></div>
+  <div class="ts-geo-shape"></div>
+  <div class="ts-geo-shape"></div>
+  <div class="ts-geo-shape"></div>
+  <div class="ts-geo-shape"></div>
+</div>
+
+<!-- ===================== PARTICLE CANVAS ===================== -->
+<canvas id="tsParticleCanvas"></canvas>
+
+<!--====================  HEADER AREA ====================-->
+<div class="header-area header-area--absolute" id="headerArea">
+  <div class="header-bottom-wrap header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="header position-relative">
+            <!-- brand logo -->
+            <div class="header__logo">
+              <a href="https://techsavanna.co.ke/">
+                <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/tech-savanna-logo.svg" class="img-fluid light-logo" alt="TechSavanna">
+                <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/logo-dark.svg" class="img-fluid dark-logo" alt="TechSavanna" style="display:none;">
+              </a>
+            </div>
+            <div class="header-right">
+              <!-- navigation menu -->
+              <div class="header__navigation menu-style-four d-none d-xl-block">
+                <nav class="navigation-menu">
+                  <ul id="nav">
+                    <li class="menu-item menu-item-has-children">
+                      <a href="https://techsavanna.co.ke/about-us/">About Us</a>
+                      <ul class="sub-menu dropdown">
+                        <li><a href="https://techsavanna.co.ke/about-us/">About Us</a></li>
+                        <li><a target="_blank" href="https://techsavanna.co.ke/wp-content/uploads/2024/07/Tech-Savanna-Profile.pdf">Our Company</a></li>
+                        <li><a href="https://techsavanna.co.ke/leadership-team/">Our Leadership Team</a></li>
+                        <li><a href="https://techsavanna.co.ke/our-gallery/">Our Gallery</a></li>
+                        <li><a href="https://techsavanna.co.ke/wp-content/uploads/2026/01/Tech-Savanna-Documents.pdf.pdf">AntiCorruption-and-Ethics.</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                      <a href="https://techsavanna.co.ke/solution/">Products &amp; Services</a>
+                      <ul class="sub-menu dropdown">
+                        <li><a href="https://techsavanna.co.ke/solutions/savanna-hrm/">WorkWise HRM</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/savanna-pos/">SavannaPay POS</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/savanna-crm/">Engage CRM</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/savanna-erp/">Savanna360 ERP</a></li>
+                        <li><a href="https://techsavanna.co.ke/solution/savanna-bpo/">Savanna BPO</a></li>
+                        <li><a href="https://techsavanna.co.ke/solution/bespoke/">Bespoke</a></li>
+                        <li><a target="_blank" href="https://sms.techsavanna.co.ke/">Bulk Sms</a></li>
+                        <li><a href="https://techsavanna.co.ke/elimucorelms/">ElimucoreLMS</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/call-center-ticketing-management/">Call Center &amp; Ticketing Management</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/document-management-system/">Document Management System</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/farm-management-system/">Farm Management System</a></li>
+                        <li><a href="https://techsavanna.co.ke/solutions/time-tracking-attendance-management/">Time Tracking &amp; Attendance Management</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item"><a target="_blank" href="https://www.tsi.ac.ke/">Training &amp; Upskilling</a></li>
+                    <li class="menu-item"><a href="https://techsavanna.co.ke/blog/">Blog</a></li>
+                    <li class="menu-item"><a href="https://techsavanna.co.ke/shop/">Shop</a></li>
+                    <li class="menu-item"><a target="_blank" href="https://careers.techsavanna.technology/">Job portal</a></li>
+                    <li class="menu-item"><a href="https://techsavanna.co.ke/contact-us/">Contact Us</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-search-form default-search">
+                <form class="search-form-top" method="get" action="https://techsavanna.co.ke" role="search">
+                  <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+                  <button type="submit" role="button" class="search-submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <!-- mobile menu trigger -->
+              <div class="mobile-navigation-icon white-md-icon d-block d-xl-none" id="mobile-menu-trigger"><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--====================  MOBILE MENU OVERLAY ====================-->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+  <div class="mobile-menu-overlay__inner">
+    <div class="mobile-menu-overlay__header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-6 col-8">
+            <div class="logo"><a href="https://techsavanna.co.ke/"><img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/logo-dark.svg" class="img-fluid" alt="TechSavanna"></a></div>
+          </div>
+          <div class="col-md-6 col-4">
+            <div class="mobile-menu-content text-end"><span class="mobile-navigation-close-icon" id="mobile-menu-close-trigger">&times;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay__body">
+      <nav class="offcanvas-navigation">
+        <ul>
+          <li class="menu-item menu-item-has-children">
+            <span class="menu-expand"><i></i></span><a href="https://techsavanna.co.ke/about-us/">About Us</a>
+            <ul class="sub-menu dropdown">
+              <li><a href="https://techsavanna.co.ke/about-us/">About Us</a></li>
+              <li><a target="_blank" href="https://techsavanna.co.ke/wp-content/uploads/2024/07/Tech-Savanna-Profile.pdf">Our Company</a></li>
+              <li><a href="https://techsavanna.co.ke/leadership-team/">Our Leadership Team</a></li>
+              <li><a href="https://techsavanna.co.ke/our-gallery/">Our Gallery</a></li>
+              <li><a href="https://techsavanna.co.ke/wp-content/uploads/2026/01/Tech-Savanna-Documents.pdf.pdf">AntiCorruption-and-Ethics.</a></li>
+            </ul>
+          </li>
+          <li class="menu-item menu-item-has-children">
+            <span class="menu-expand"><i></i></span><a href="https://techsavanna.co.ke/solution/">Products &amp; Services</a>
+            <ul class="sub-menu dropdown">
+              <li><a href="https://techsavanna.co.ke/solutions/savanna-hrm/">WorkWise HRM</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/savanna-pos/">SavannaPay POS</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/savanna-crm/">Engage CRM</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/savanna-erp/">Savanna360 ERP</a></li>
+              <li><a href="https://techsavanna.co.ke/solution/savanna-bpo/">Savanna BPO</a></li>
+              <li><a href="https://techsavanna.co.ke/solution/bespoke/">Bespoke</a></li>
+              <li><a target="_blank" href="https://sms.techsavanna.co.ke/">Bulk Sms</a></li>
+              <li><a href="https://techsavanna.co.ke/elimucorelms/">ElimucoreLMS</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/call-center-ticketing-management/">Call Center &amp; Ticketing Management</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/document-management-system/">Document Management System</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/farm-management-system/">Farm Management System</a></li>
+              <li><a href="https://techsavanna.co.ke/solutions/time-tracking-attendance-management/">Time Tracking &amp; Attendance Management</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a target="_blank" href="https://www.tsi.ac.ke/">Training &amp; Upskilling</a></li>
+          <li class="menu-item"><a href="https://techsavanna.co.ke/blog/">Blog</a></li>
+          <li class="menu-item"><a href="https://techsavanna.co.ke/shop/">Shop</a></li>
+          <li class="menu-item"><a target="_blank" href="https://careers.techsavanna.technology/">Job portal</a></li>
+          <li class="menu-item"><a href="https://techsavanna.co.ke/contact-us/">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== HERO SECTION (3D Enhanced) ==================== -->
+<section class="hero-split" id="heroSection">
+  <div class="hero-orb hero-orb-1" data-parallax="0.03"></div>
+  <div class="hero-orb hero-orb-2" data-parallax="0.05"></div>
+  <!-- LEFT CONTENT -->
+  <div class="hero-content" id="heroContent">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Trusted by businesses worldwide
+    </div>
+    <h1>Welcome to TechSavanna</h1>
+    <h2 class="hero-subtitle">We design, develop and deliver smart IT solutions — for businesses everywhere</h2>
+    <p class="up-type-title c-spacing">
+      We deliver for
+      <span id="typedText" class="animated-text">ERP Systems</span>
+      <span class="typed-cursor">|</span>
+    </p>
+    <div class="hero-actions">
+      <a href="https://techsavanna.co.ke/solution/" class="hero-btn ts-magnetic">Learn More</a>
+    </div>
+  </div>
+  <!-- RIGHT VIDEO -->
+  <div class="hero-video-wrapper" id="heroVideoWrapper">
+    <video id="heroVideo" autoplay muted loop playsinline>
+      <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/home_hero.mp4" type="video/mp4">
+    </video>
+    <button id="soundToggleBtn" class="hero-sound-btn">&#128266; Sound Off</button>
+  </div>
+</section>
+
+<!-- ═══ ANIMATED STATS COUNTER ═══ -->
+<section class="ts-stats-section" id="tsStatsSection">
+  <div class="container">
+    <div class="ts-stats-grid">
+      <!-- Stat 1: Projects Delivered -->
+      <div class="ts-stat-card ts-reveal">
+        <div class="ts-stat-icon"><i class="fas fa-project-diagram"></i></div>
+        <div class="ts-stat-number"><span class="ts-counter" data-target="500">0</span><span class="ts-stat-suffix">+</span></div>
+        <div class="ts-stat-label">Projects Delivered</div>
+      </div>
+      <!-- Stat 2: Happy Clients -->
+      <div class="ts-stat-card ts-reveal">
+        <div class="ts-stat-icon"><i class="fas fa-smile"></i></div>
+        <div class="ts-stat-number"><span class="ts-counter" data-target="150">0</span><span class="ts-stat-suffix">+</span></div>
+        <div class="ts-stat-label">Happy Clients</div>
+      </div>
+      <!-- Stat 3: Years Experience -->
+      <div class="ts-stat-card ts-reveal">
+        <div class="ts-stat-icon"><i class="fas fa-clock"></i></div>
+        <div class="ts-stat-number"><span class="ts-counter" data-target="12">0</span><span class="ts-stat-suffix">+</span></div>
+        <div class="ts-stat-label">Years Experience</div>
+      </div>
+      <!-- Stat 4: Team Members -->
+      <div class="ts-stat-card ts-reveal">
+        <div class="ts-stat-icon"><i class="fas fa-users"></i></div>
+        <div class="ts-stat-number"><span class="ts-counter" data-target="50">0</span><span class="ts-stat-suffix">+</span></div>
+        <div class="ts-stat-label">Team Members</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END ANIMATED STATS COUNTER ═══ -->
+
+<!-- ==================== WHAT WE DO / SOLUTIONS ==================== -->
+<!-- Solutions section: reduced top padding to close gap after stats section -->
+<section class="work-section" style="padding: 20px 0 60px;">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="section-heading text-center ts-reveal">
+          <h4 class="h5">What we do</h4>
+          <div class="sectionimg">
+            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/01/products_servicesss.png" alt="Products and Services">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-11 col-md-12">
+        <div class="sol-wrap">
+          <div class="sol-track" id="solTrack" style="transform: translateX(0%);">
+            <!-- Page 1 -->
+            <div class="sol-slide active" data-page="0">
+              <div class="sol-grid">
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/savanna-hrm.png" alt="WorkWise HRM">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>WorkWise HRM</h2>
+                    <h4>(Human Resource Management)</h4>
+                    <p>The <strong>WorkWise HRM</strong> Payroll Management feature allows employers to quickly and effortlessly pay employees...</p>
+                    <a href="https://techsavanna.co.ke/solutions/savanna-hrm/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/WhatsApp-Image-2024-04-04-at-16.09.52_2e27a917.jpg" alt="Engage CRM">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>Engage CRM</h2>
+                    <h4>(Customer Relationship Management)</h4>
+                    <p><strong>Engage CRM</strong> is a powerful customer relationship management system, designed to help businesses b...</p>
+                    <a href="https://techsavanna.co.ke/solutions/savanna-crm/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/savanna-erp.png" alt="Savanna360 ERP">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>Savanna360 ERP</h2>
+                    <h4>(Enterprise resource planning)</h4>
+                    <p><strong>Savanna360 ERP</strong> is a powerful enterprise resource planning system designed to help businesses effectively manage...</p>
+                    <a href="https://techsavanna.co.ke/solutions/savanna-erp/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/savanna-pos.png" alt="SavannaPay POS">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>SavannaPay POS</h2>
+                    <h4>(Point of sale)</h4>
+                    <p><strong>SavannaPay POS</strong> is a powerful point-of-sale system, designed to help businesses streamline their sales...</p>
+                    <a href="https://techsavanna.co.ke/solutions/savanna-pos/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page 2 -->
+            <div class="sol-slide" data-page="1">
+              <div class="sol-grid">
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-04-at-16.09.51_6dc8854f.jpg" alt="Savanna BPO">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>Savanna BPO</h2>
+                    <h4>(Business processes Outsourcing)</h4>
+                    <p>Techsavanna is a leading software solution and IT consulting company, offering a range of IT consulting services...</p>
+                    <a href="https://techsavanna.co.ke/solution/savanna-bpo/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-04-at-16.09.53_56d56bbd.jpg" alt="Training and Upskilling">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>Training and Upskilling</h2>
+                    <h4>(Professional Development &amp; IT Training)</h4>
+                    <p>Techsavanna's trainers and upskilling experts are experienced professionals with years of experience in the industry...</p>
+                    <a href="https://www.tsi.ac.ke/" class="readmore" rel="noopener" target="_blank">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2024/05/bespoke-slider.jpg" alt="Bespoke">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>Bespoke</h2>
+                    <h4>(Tailored Software Solutions)</h4>
+                    <p>Techsavanna is a leading software solution and IT consulting company, offering a range of IT consulting services to help businesses...</p>
+                    <a href="https://techsavanna.co.ke/solution/bespoke/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+                <div class="card slider-card sol-card ts-tilt-card">
+                  <div class="sol-img-wrap">
+                    <img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/elimu.png" alt="ElimucoreLMS">
+                  </div>
+                  <div class="cardinfo text-center">
+                    <h2>ElimucoreLMS</h2>
+                    <h4>Learning Management System</h4>
+                    <a href="https://techsavanna.co.ke/solutions/elimucorelms/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Dots -->
+          <div class="sol-dots" id="solDots">
+            <button class="sol-dot active" data-page="0" aria-label="Page 1"></button>
+            <button class="sol-dot" data-page="1" aria-label="Page 2"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADDITIONAL SOLUTIONS WITH CATEGORY TABS ═══ -->
+<section class="work-section ptb-60">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-8">
+        <div class="section-heading text-center ts-reveal">
+          <h4 class="h5">More Solutions</h4>
+        </div>
+      </div>
+    </div>
+    <!-- Category tab navigation -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-lg-11 col-md-12">
+        <div class="ts-sol-tabs" id="tsSolTabs">
+          <button class="ts-sol-tab active" data-category="all">All</button>
+          <button class="ts-sol-tab" data-category="enterprise">Enterprise</button>
+          <button class="ts-sol-tab" data-category="management">Management</button>
+          <button class="ts-sol-tab" data-category="industry">Industry</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-11 col-md-12">
+        <div class="sol-grid" id="tsSolGrid">
+          <!-- Enterprise: Savanna360 ERP -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="enterprise">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/savanna-erp.png" alt="Savanna360 ERP">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Savanna360 ERP</h2>
+              <h4>Enterprise Resource Planning</h4>
+              <p>Savanna360 ERP is a powerful enterprise resource planning system designed to help businesses effectively manage all core operations from finance to supply chain.</p>
+              <a href="https://techsavanna.co.ke/solutions/savanna-erp/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Enterprise: WorkWise HRM -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="enterprise">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/savanna-hrm.png" alt="WorkWise HRM">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>WorkWise HRM</h2>
+              <h4>Human Resource Management</h4>
+              <p>The WorkWise HRM Payroll Management feature allows employers to quickly and effortlessly pay employees while managing HR operations end-to-end.</p>
+              <a href="https://techsavanna.co.ke/solutions/savanna-hrm/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Management: Engage CRM -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="management">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/WhatsApp-Image-2024-04-04-at-16.09.52_2e27a917.jpg" alt="Engage CRM">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Engage CRM</h2>
+              <h4>Customer Relationship Management</h4>
+              <p>Engage CRM is a powerful customer relationship management system designed to help businesses build and nurture lasting client relationships.</p>
+              <a href="https://techsavanna.co.ke/solutions/savanna-crm/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Management: Document Management System -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="management">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2026/06/Screenshot-2026-06-07-130500.png" alt="Document Management System">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Document Management System</h2>
+              <p>The DMS serves as a foundational platform for organizational knowledge and document governance. It enables departments to securely manage, retrieve, and process documents while reducing manual dependency and improving operational continuity.</p>
+              <a href="https://techsavanna.co.ke/solutions/document-management-system/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Management: Call Center & Ticketing -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="management">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2026/06/Screenshot-2026-06-05-161241.png" alt="Call Center &amp; Ticketing Management">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Call Center &amp; Ticketing Management</h2>
+              <h4>Executive Summary</h4>
+              <p>The Call Center &amp; Ticketing System by Techsavanna serves as a centralized customer support and communication management platform. It enables organizations to manage customer interactions efficiently while improving service delivery, operational visibility, and issue resolution workflows.</p>
+              <a href="https://techsavanna.co.ke/solutions/call-center-ticketing-management/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Industry: Farm Management System -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="industry">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2026/06/Screenshot-2026-06-07-131541.png" alt="Farm Management System">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Farm Management System</h2>
+              <p>The Farm Management System by Techsavanna is a centralized digital platform designed to help agricultural organizations, commercial farms, cooperatives, and agribusinesses manage farm operations efficiently. The system streamlines agricultural activities by consolidating crop management, livestock monitoring, inventory tracking, workforce coordination, financial oversight, and reporting into one intelligent platform.</p>
+              <a href="https://techsavanna.co.ke/solutions/farm-management-system/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+          <!-- Industry: Time Tracking & Attendance -->
+          <div class="card slider-card sol-card ts-tilt-card ts-reveal ts-sol-filtered ts-visible" data-category="industry">
+            <div class="sol-img-wrap">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2026/06/Screenshot-2026-06-07-131949.png" alt="Time Tracking &amp; Attendance Management">
+            </div>
+            <div class="cardinfo text-center">
+              <h2>Time Tracking &amp; Attendance Management</h2>
+              <p>The Techsavanna Time &amp; Attendance System is a centralized workforce management platform designed to help organizations monitor employee attendance, work hours, shifts, leave, and workforce productivity efficiently.</p>
+              <a href="https://techsavanna.co.ke/solutions/time-tracking-attendance-management/" class="readmore">Read More <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/svg/read-more.svg" alt="Read more"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END ADDITIONAL SOLUTIONS WITH CATEGORY TABS ═══ -->
+
+<!-- ==================== CLIENT LOGOS / PARTNERS ==================== -->
+<section class="work-section bg-light-subtle p-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="section-title ts-reveal" style="color: #007bff; text-align: center; margin-bottom: 30px;">Our Partners</h2>
+      </div>
+    </div>
+    <div class="ts-partners-wrap">
+      <div class="ts-pages-container" id="tsPagesContainer">
+        <div class="ts-page active" data-page="0">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://www.oracle.com/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/Asset-1.png" alt="Oracle"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/clientslider/good-firm/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/09/good-firm-logo.png" alt="Good Firm"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/aws-logo.png" alt="AWS"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsoft-365-logo.png" alt="Microsoft 365"></a></div>
+          </div>
+        </div>
+        <div class="ts-page" data-page="1">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2024/07/microsof-azure-logo.png" alt="Microsoft Azure"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-07.png" alt="Equity"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-06.png" alt="St John"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-05.png" alt="Stanbic"></a></div>
+          </div>
+        </div>
+        <div class="ts-page" data-page="2">
+          <div class="ts-logos-grid">
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-04.png" alt="Britam"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-03.png" alt="Safaricom"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-02.png" alt="Kcb"></a></div>
+            <div class="ts-logo-item"><a href="https://techsavanna.co.ke/solution/bespoke/" class="ts-logo-card"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-01.png" alt="Teenovators"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="ts-dots" id="tsDotsWrap">
+        <button class="ts-dot active" data-page="0" aria-label="Page 1"></button>
+        <button class="ts-dot" data-page="1" aria-label="Page 2"></button>
+        <button class="ts-dot" data-page="2" aria-label="Page 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VIDEO SECTION ==================== -->
+<div class="videoarea">
+  <div class="container">
+    <div class="swiper video-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <iframe data-src="https://www.youtube.com/embed/crynl8l-Zac" frameborder="0" allowfullscreen class="lazyload"></iframe>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="https://techsavanna.co.ke/wp-content/uploads/2026/01/tech_videoo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3D FLIP SUCCESS STORY CARDS ═══ -->
+<section class="success-story-section pt-5 pb-5 bg-light-subtle">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center ts-reveal">
+        <h2 class="mb-3">Success Stories</h2>
+        <p>Our customers describe how Techsavanna provided tailored and efficient solutions to their IT needs. Hover or tap a card to see the full story.</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="ts-flip-grid">
+          <!-- Flip Card 1: Safaricom PLC — with organization logo from partner assets -->
+          <div class="ts-flip-card ts-reveal">
+            <div class="ts-flip-card-inner">
+              <div class="ts-flip-face ts-flip-front">
+                <!-- Safaricom logo from partner section assets -->
+                <div class="ts-flip-icon" style="background:transparent;border:none;width:auto;height:auto;"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-03.png" alt="Safaricom Logo" style="max-width:90px;max-height:55px;object-fit:contain;filter:brightness(0);"></div>
+                <div class="ts-flip-industry">Telecommunications</div>
+                <h3>Safaricom PLC</h3>
+                <p class="ts-flip-teaser">Transformed IT operations management</p>
+                <span class="ts-flip-hint"><i class="fas fa-sync-alt"></i> Hover to read more</span>
+              </div>
+              <div class="ts-flip-face ts-flip-back">
+                <h4><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-03.png" alt="Safaricom" style="max-width:70px;max-height:40px;object-fit:contain;vertical-align:middle;margin-right:8px;filter:brightness(10);">Safaricom PLC</h4>
+                <p class="ts-flip-testimonial">"Techsavanna has provided us with exceptional service. Their team was incredibly knowledgeable and professional, delivering an IT solution that was tailored to our unique needs."</p>
+                <p class="ts-flip-result"><i class="fas fa-chart-line"></i> Transformed IT operations management with 99.9% uptime</p>
+                <a href="https://techsavanna.co.ke/contact-us/" class="ts-flip-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Flip Card 2: Equity Bank — with organization logo from partner assets -->
+          <div class="ts-flip-card ts-reveal">
+            <div class="ts-flip-card-inner">
+              <div class="ts-flip-face ts-flip-front">
+                <!-- Equity Bank logo from partner section assets -->
+                <div class="ts-flip-icon" style="background:transparent;border:none;width:auto;height:auto;"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-07.png" alt="Equity Bank Logo" style="max-width:90px;max-height:55px;object-fit:contain;filter:brightness(0);"></div>
+                <div class="ts-flip-industry">Banking &amp; Finance</div>
+                <h3>Equity Bank</h3>
+                <p class="ts-flip-teaser">Streamlined HR and payroll across 200+ branches</p>
+                <span class="ts-flip-hint"><i class="fas fa-sync-alt"></i> Hover to read more</span>
+              </div>
+              <div class="ts-flip-face ts-flip-back">
+                <h4><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-07.png" alt="Equity Bank" style="max-width:70px;max-height:40px;object-fit:contain;vertical-align:middle;margin-right:8px;filter:brightness(10);">Equity Bank</h4>
+                <p class="ts-flip-testimonial">"With Techsavanna's WorkWise HRM, we were able to unify payroll processing and HR management across all our branches, saving significant time and reducing errors."</p>
+                <p class="ts-flip-result"><i class="fas fa-chart-line"></i> Streamlined HR &amp; payroll across 200+ branches</p>
+                <a href="https://techsavanna.co.ke/contact-us/" class="ts-flip-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Flip Card 3: Britam — with organization logo from partner assets -->
+          <div class="ts-flip-card ts-reveal">
+            <div class="ts-flip-card-inner">
+              <div class="ts-flip-face ts-flip-front">
+                <!-- Britam logo from partner section assets -->
+                <div class="ts-flip-icon" style="background:transparent;border:none;width:auto;height:auto;"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-04.png" alt="Britam Logo" style="max-width:90px;max-height:55px;object-fit:contain;filter:brightness(0);"></div>
+                <div class="ts-flip-industry">Insurance</div>
+                <h3>Britam</h3>
+                <p class="ts-flip-teaser">Digitized document workflows reducing processing time by 60%</p>
+                <span class="ts-flip-hint"><i class="fas fa-sync-alt"></i> Hover to read more</span>
+              </div>
+              <div class="ts-flip-face ts-flip-back">
+                <h4><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-04.png" alt="Britam" style="max-width:70px;max-height:40px;object-fit:contain;vertical-align:middle;margin-right:8px;filter:brightness(10);">Britam</h4>
+                <p class="ts-flip-testimonial">"Techsavanna's Document Management System revolutionized our claims and policy document processing, enabling secure, rapid access to critical records."</p>
+                <p class="ts-flip-result"><i class="fas fa-chart-line"></i> Digitized document workflows reducing processing time by 60%</p>
+                <a href="https://techsavanna.co.ke/contact-us/" class="ts-flip-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Flip Card 4: Stanbic Bank — with organization logo from partner assets -->
+          <div class="ts-flip-card ts-reveal">
+            <div class="ts-flip-card-inner">
+              <div class="ts-flip-face ts-flip-front">
+                <!-- Stanbic Bank logo from partner section assets -->
+                <div class="ts-flip-icon" style="background:transparent;border:none;width:auto;height:auto;"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-05.png" alt="Stanbic Bank Logo" style="max-width:90px;max-height:55px;object-fit:contain;filter:brightness(0);"></div>
+                <div class="ts-flip-industry">Banking</div>
+                <h3>Stanbic Bank</h3>
+                <p class="ts-flip-teaser">Deployed enterprise CRM boosting client engagement 40%</p>
+                <span class="ts-flip-hint"><i class="fas fa-sync-alt"></i> Hover to read more</span>
+              </div>
+              <div class="ts-flip-face ts-flip-back">
+                <h4><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/logo-05.png" alt="Stanbic Bank" style="max-width:70px;max-height:40px;object-fit:contain;vertical-align:middle;margin-right:8px;filter:brightness(10);">Stanbic Bank</h4>
+                <p class="ts-flip-testimonial">"The Engage CRM solution from Techsavanna transformed how we interact with our clients, giving our relationship managers powerful tools to deliver personalized service at scale."</p>
+                <p class="ts-flip-result"><i class="fas fa-chart-line"></i> Deployed enterprise CRM boosting client engagement 40%</p>
+                <a href="https://techsavanna.co.ke/contact-us/" class="ts-flip-link">Read Full Story <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END 3D FLIP SUCCESS STORY CARDS ═══ -->
+
+<!-- ==================== WORK ROUTINE / PROCESS ==================== -->
+<section class="work-section bg-light-subtle ptb-60">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-4">
+        <div class="mb-4 workblock ts-reveal-left">
+          <h4>Our Process</h4>
+          <h2>Work Routine</h2>
+          <p>Techsavanna provides top-notch software and IT solutions through an in-depth research, design, build, and deployment process. The customer's needs are taken into account throughout the process to ensure they receive a tailored solution that meets their requirements.</p>
+          <!-- Progress Bars showing process efficiency -->
+          <div class="ts-progress-wrap" id="tsProgressWrap">
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">Research</span>
+                <span class="ts-progress-pct">95%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">Design</span>
+                <span class="ts-progress-pct">90%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">Build</span>
+                <span class="ts-progress-pct">98%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="98"></div>
+              </div>
+            </div>
+            <div class="ts-progress-item">
+              <div class="ts-progress-header">
+                <span class="ts-progress-label">Deliver</span>
+                <span class="ts-progress-pct">100%</span>
+              </div>
+              <div class="ts-progress-bar">
+                <div class="ts-progress-fill" data-width="100"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ═══ END PROGRESS BARS ═══ -->
+        </div>
+      </div>
+      <div class="col-lg-8 workroutine">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/research.svg" alt="Research"></div>
+                <h3>Research</h3>
+                <p>Research allows us to gain a better understanding of the customer's needs and goals, as well as the market and the competition.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/build.svg" alt="Build"></div>
+                <h3>Build</h3>
+                <p>We use a variety of programming languages, development platforms, and frameworks to create fully functioning solutions that meet the customer's needs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/design.svg" alt="Design"></div>
+                <h3>Design</h3>
+                <p>We use design to create effective, user-friendly solutions that meet the customer's needs, while also being visually appealing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative ts-reveal">
+              <div class="cta-card rounded-custom text-center custom-shadow p-5">
+                <div class="feature-icon d-inline-block"><img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/deliver.svg" alt="Deliver"></div>
+                <h3>Deliver</h3>
+                <p>We ensure seamless deployment, thorough testing, and comprehensive training so that the solution is successfully integrated into the customer's operations and delivers measurable results.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="testimonal-section ptb-60">
+  <div class="container">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-6 ts-reveal">
+        <div class="section-heading text-center">
+          <h4 class="h5">Testimonials</h4>
+          <h2>Reviews From Happy Clients</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-12">
+        <div class="owl-theme owl-carousel slidenav-left testimonial ts-reveal">
+          <!-- Testimonial 1: Joe Doe – CIO, Safaricom PLC (matching live website) -->
+          <div class="testimonal-slider">
+            <div class="text-center ev-single-testimonial">
+              <ul class="list-unstyled rating-list list-inline mb-3">
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+              </ul>
+              <p>I can confidently say that Techsavanna has provided us with exceptional service. Their team was incredibly knowledgeable and professional, delivering an IT solution that was tailored to our unique needs. With their help, we have been able to efficiently manage our IT operations in a manner that is both cost-effective and secure. I would highly recommend Techsavanna to any business looking for an efficient IT solutions.</p>
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/testimonial-2.png" alt="Joe Doe – CIO, Safaricom PLC" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+              <h5>Joe Doe – CIO, Safaricom PLC</h5>
+            </div>
+          </div>
+          <!-- Testimonial 2: George Njuguna – CIO, Safaricom PLC (matching live website) -->
+          <div class="testimonal-slider">
+            <div class="text-center ev-single-testimonial">
+              <ul class="list-unstyled rating-list list-inline mb-3">
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+                <li class="list-inline-item"><i class="fas fa-star text-warning"></i></li>
+              </ul>
+              <p>I can confidently say that Techsavanna has provided us with exceptional service. Their team was incredibly knowledgeable and professional, delivering an IT solution that was tailored to our unique needs. With their help, we have been able to efficiently manage our IT operations in a manner that is both cost-effective and secure. I would highly recommend Techsavanna to any business looking for an efficient IT solutions.</p>
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2023/08/testimonial-2.png" alt="George Njuguna – CIO, Safaricom PLC" style="width:80px;height:80px;border-radius:50%;object-fit:cover;">
+              <h5>George Njuguna – CIO, Safaricom PLC</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CREDENTIALS / CERTIFICATIONS ==================== -->
+<section class="integration-section cert-section">
+  <div class="container">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-6 ts-reveal">
+        <div class="section-heading text-center">
+          <h4 class="h5">Credentials</h4>
+          <h2>Trust &amp; Certification</h2>
+          <p>We upload the highest standards in data protection, quality management, and ICT services.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <!-- Data Protection -->
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="mb-4 position-relative text-decoration-none connected-app-single border-2 rounded-custom d-block overflow-hidden p-5">
+          <div class="position-relative connected-app-content text-center">
+            <div class="integration-logo p-2 d-inline-block">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/images/svg/padlock.svg" width="40" alt="Data Protection">
+            </div>
+            <h5>Data Protection Compliance</h5>
+            <p class="mb-0 text-body">Ensuring secure and ethical handling of your information</p>
+            <button data-bs-toggle="modal" data-bs-target="#dataprotection" class="mt-4 btn btn-success">View Certificate</button>
+          </div>
+        </div>
+      </div>
+      <!-- Data Protection Modal -->
+      <div class="modal fade" id="dataprotection" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body"><img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/Techsavanna-Limited-Company-Registration-Certificate.jpg" class="img-fluid" alt="Data Protection Certificate"></div>
+          </div>
+        </div>
+      </div>
+      <!-- ISO -->
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="mb-4 position-relative text-decoration-none connected-app-single border-2 rounded-custom d-block overflow-hidden p-5">
+          <div class="position-relative connected-app-content text-center">
+            <div class="integration-logo p-2 d-inline-block">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/images/svg/awards.svg" width="40" alt="ISO">
+            </div>
+            <h5>ISO 9001:2015 Certified</h5>
+            <p class="mb-0 text-body">Recognized for excellence in quality management and customer satisfaction</p>
+            <button class="mt-4 btn btn-primary" data-bs-toggle="modal" data-bs-target="#certified">View Certificate</button>
+          </div>
+        </div>
+      </div>
+      <!-- ISO Modal -->
+      <div class="modal fade" id="certified" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body"><img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/Techsavanna-Company-Limited_QMS_GR24_UAF-Cert.jpg" class="img-fluid" alt="ISO Certificate"></div>
+          </div>
+        </div>
+      </div>
+      <!-- ICT Authority -->
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="mb-4 position-relative text-decoration-none connected-app-single border-2 rounded-custom d-block overflow-hidden p-5">
+          <div class="position-relative connected-app-content text-center">
+            <div class="integration-logo p-2 d-inline-block">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/images/svg/badge.svg" width="40" alt="ICT Authority">
+            </div>
+            <h5>ICT Authority Accreditation</h5>
+            <p class="mb-0 text-body">Accredited for systems and applications in the provision of ICT services</p>
+            <a href="#" class="mt-4 btn btn-warning">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- ORACLE -->
+      <div class="col-lg-3 col-md-6 ts-reveal">
+        <div class="mb-4 position-relative text-decoration-none connected-app-single border-2 rounded-custom d-block overflow-hidden p-5">
+          <div class="position-relative connected-app-content text-center">
+            <div class="integration-logo p-2 d-inline-block">
+              <img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/oracle-logo.svg" width="60" alt="Oracle Certification">
+            </div>
+            <h5>Oracle Technology Certified</h5>
+            <p class="mb-0 text-body">Recognized for expertise in implementing enterprise database, cloud, and infrastructure solutions using Oracle technologies.</p>
+            <button class="mt-4 btn btn-danger" data-bs-toggle="modal" data-bs-target="#oraclecert">View Certificate</button>
+          </div>
+        </div>
+      </div>
+      <!-- Oracle Modal -->
+      <div class="modal fade" id="oraclecert" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body"><img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/certificate.jpg" class="img-fluid" alt="Oracle Certificate"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Cert Slider -->
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-8 col-md-12 mx-auto mt-5">
+        <div class="client-slides-2 owl-carousel owl-theme">
+          <div class="client-card"><div><a href="https://www.oracle.com/"><img src="https://techsavanna.co.ke/wp-content/uploads/2026/03/Asset-1.png" alt="Oracle" style="max-width:120px;"></a></div></div>
+          <div class="client-card"><div><a href="https://techsavanna.co.ke/certslider/gabriel-registrar/"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/03/gabriel-registrar-logo.png" alt="Gabriel Registrar"></a></div></div>
+          <div class="client-card"><div><a href="https://techsavanna.co.ke/certslider/uaf/"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/03/uaf-logo.png" alt="UAF"></a></div></div>
+          <div class="client-card"><div><a href="https://techsavanna.co.ke/certslider/iaf/"><img src="https://techsavanna.co.ke/wp-content/uploads/2025/03/iaf-logo.png" alt="IAF"></a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INTEGRATION SECTION ==================== -->
+<!-- Matches the "We Collaborate with Top Software Company" section on the live website -->
+<section class="integration-section bg-light-subtle ptb-120">
+  <div class="container">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-6 ts-reveal">
+        <div class="section-heading text-center">
+          <h4 class="h5">Integration</h4>
+          <h2>We Collaborate with Top Software Company</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-8">
+        <div class="row g-4">
+          <!-- Integration logos from live site assets -->
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/1.png" alt="Integration Partner 1">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/2.png" alt="Integration Partner 2">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/3.png" alt="Integration Partner 3">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/4.png" alt="Integration Partner 4">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/5.png" alt="Integration Partner 5">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/6.png" alt="Integration Partner 6">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/7.png" alt="Integration Partner 7">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/8.png" alt="Integration Partner 8">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/9.png" alt="Integration Partner 9">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/10.png" alt="Integration Partner 10">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/11.png" alt="Integration Partner 11">
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6 ts-reveal">
+            <div class="ts-logo-card" style="min-height:80px;">
+              <img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/integations/12.png" alt="Integration Partner 12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END INTEGRATION SECTION -->
+
+<!-- ═══ FAQ ACCORDION ═══ -->
+<section class="ts-faq-section bg-light-subtle" id="tsFaqSection">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center ts-reveal">
+        <div class="section-heading">
+          <h4 class="h5">Got Questions?</h4>
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about our services, solutions, and how we can help your business thrive.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="ts-faq-list">
+          <!-- FAQ 1 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>What services does Techsavanna offer?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Techsavanna offers a comprehensive suite of services including bespoke software solutions, enterprise IT consulting, and business process outsourcing (BPO). Our product lineup includes Savanna360 ERP for enterprise resource planning, WorkWise HRM for human resource management, Engage CRM for customer relationship management, Document Management Systems, Farm Management Systems, and Time Tracking &amp; Attendance solutions. We also provide custom software development tailored to your specific business needs.</div>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>How long does it take to implement an ERP system?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">ERP implementation timelines vary based on the complexity and scale of your operations. A standard Savanna360 ERP deployment typically takes 3 to 6 months, including discovery, configuration, data migration, testing, and training phases. For larger enterprises with complex workflows, the timeline may extend to 9&ndash;12 months. Our team works closely with you to establish clear milestones and ensure a smooth, on-time delivery with minimal disruption to your business.</div>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>Do you offer custom software development?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Yes! Our Bespoke solutions division specializes in building fully customized software tailored to your unique business requirements. Whether you need a specialized web application, mobile app, API integrations, or an entirely new platform, our experienced development team uses modern technologies and agile methodologies to deliver solutions that scale with your business. Every bespoke project includes thorough requirements analysis, iterative development, and comprehensive testing.</div>
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>What industries do you serve?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Techsavanna serves a diverse range of industries including banking &amp; finance, insurance, telecommunications, agriculture, healthcare, education, government &amp; public sector, retail, and manufacturing. Our solutions are designed to be industry-agnostic yet configurable to meet sector-specific compliance, workflow, and regulatory requirements. This flexibility has enabled us to successfully deploy solutions for leading organizations across East Africa and beyond.</div>
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>Is training provided with your solutions?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Absolutely. Through our dedicated training and upskilling arm, TSI (Techsavanna Training Institute), we provide comprehensive training programs for all our solutions. This includes on-site training, virtual instructor-led sessions, self-paced e-learning through ElimucoreLMS, and ongoing support. We ensure your team is fully equipped to maximize the value of your investment from day one, with refresher courses and advanced training available as your needs evolve.</div>
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="ts-faq-item ts-reveal">
+            <div class="ts-faq-question">
+              <span>How do I get a quote for my project?</span>
+              <span class="ts-faq-icon">+</span>
+            </div>
+            <div class="ts-faq-answer">
+              <div class="ts-faq-answer-inner">Getting a quote is easy! Simply visit our <a href="https://techsavanna.co.ke/contact-us/" style="color:var(--ts-primary);font-weight:600;">Contact Us</a> page and fill out the inquiry form with details about your project. You can also reach us directly via email or phone. Our team will schedule a discovery call to understand your requirements, after which we'll provide a detailed proposal including scope, timeline, and transparent pricing. We typically respond within 24 business hours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ END FAQ ACCORDION ═══ -->
+
+<!-- ==================== BLOG SECTION ==================== -->
+<section class="home-blog-section ptb-160">
+  <div class="container">
+    <div class="row justify-content-center align-content-center">
+      <div class="col-md-10 col-lg-6">
+        <div class="section-heading text-center ts-reveal">
+          <h4 class="h5">Blog</h4>
+          <h2>Our Latest News and Update</h2>
+          <p>Assertively maximize cost effective methods of iterate team driven manufactured products through equity invested via customized benefits.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Blog row: justify-content-center centers the 2 col-lg-4 cards -->
+    <div class="row justify-content-center">
+      <!-- Blog Article 1: The Operating System for Modern African Businesses -->
+      <div class="col-lg-4 col-md-6">
+        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
+          <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/" class="article-img">
+            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_zfure4zfure4zfur.png" alt="The Operating System for Modern African Businesses">
+          </a>
+          <div class="article-content p-4">
+            <a href="https://techsavanna.co.ke/the-operating-system-for-modern-african-businesses/">
+              <h2 class="h5 article-title limit-2-line-text">The Operating System for Modern African Businesses</h2>
+            </a>
+            <p class="limit-2-line-text">Africa is not short on ambition; it is short on systems that move at the speed of that ambition. Across the continent, businesses are scaling in high-complexity environments. They navigate inconsistent connectivity, hybrid cash-to-digital economies, and evolving regulations. Most crucially, they lead teams that must learn while they build. Yet, the software running these businesses [...]</p>
+            <a href="javascript:;">
+              <div class="d-flex align-items-center pt-4">
+                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
+                <div class="avatar-info">
+                  <h6 class="mb-0 avatar-name">Admin</h6>
+                  <span class="small fw-medium text-muted">March 13, 2026</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Blog Article 2: What Is an ERP and When Does a Business Actually Need One? -->
+      <div class="col-lg-4 col-md-6">
+        <div class="single-article rounded-custom mb-4 mb-lg-0 ts-reveal">
+          <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/" class="article-img">
+            <img src="https://techsavanna.co.ke/wp-content/uploads/2026/04/Gemini_Generated_Image_xcy8nlxcy8nlxcy8.png" alt="What Is an ERP and When Does a Business Actually Need One">
+          </a>
+          <div class="article-content p-4">
+            <a href="https://techsavanna.co.ke/what-is-an-erp-and-when-does-a-business-actually-need-one/">
+              <h2 class="h5 article-title limit-2-line-text">What Is an ERP and When Does a Business Actually Need One?</h2>
+            </a>
+            <p class="limit-2-line-text">As businesses grow, complexity sneaks in quietly. What starts as a simple operation with notebooks, spreadsheets, and a few disconnected tools can quickly turn into a maze of confusion, duplication, and costly mistakes. This is often the moment leaders start hearing about "ERP systems" and wondering if the investment is actually worth it. Let's slow [...]</p>
+            <a href="javascript:;">
+              <div class="d-flex align-items-center pt-4">
+                <div class="avatar"><img src="https://secure.gravatar.com/avatar/57ede422da1941520b18b0e608981475031fb8c5da586260b308c89a7b1930b0?s=96&d=mm&r=g" alt="Admin" width="40" class="rounded-circle me-3"></div>
+                <div class="avatar-info">
+                  <h6 class="mb-0 avatar-name">Admin</h6>
+                  <span class="small fw-medium text-muted">January 7, 2026</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 text-center mt-5 ts-reveal">
+        <a href="https://techsavanna.co.ke/blog" class="mt-4 btn btn-primary ts-magnetic">View all Articles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer-section">
+  <div class="footer-top bg-gradient text-white ptb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-4 mt-4 mt-md-0 mt-lg-0">
+          <div class="footerlogo">
+            <a href="https://techsavanna.co.ke/"><img src="https://techsavanna.co.ke/wp-content/themes/techsavanna/assets/images/tech-savanna-logo.svg" class="web-logo" alt="TechSavanna"></a>
+          </div>
+          <div class="footertext">
+            <p>Techsavanna excels as a top-tier provider of <strong>bespoke software solutions, elite IT consulting, and unwavering support services.</strong> Our mission is clear: empower businesses across diverse industries to optimize operations and achieve unparalleled success.</p>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4 mt-4 mt-md-0 mt-lg-0">
+          <div class="row">
+            <div class="col-md-6 col-lg-6 mt-4 mt-md-0 mt-lg-0">
+              <div class="footer-single-col">
+                <h3>Resources</h3>
+                <ul class="list-unstyled footer-nav-list mb-lg-0">
+                  <li><a href="https://techsavanna.co.ke/about-us/">About Us</a></li>
+                  <li><a href="https://techsavanna.co.ke/solution/">Solutions</a></li>
+                  <li><a href="https://techsavanna.co.ke/blog/">Our Blogs</a></li>
+                  <li><a target="_blank" href="https://careers.techsavanna.technology/">Job Portal</a></li>
+                  <li><a href="https://techsavanna.co.ke/contact-us/">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 mt-4 mt-md-0 mt-lg-0">
+              <div class="footer-single-col">
+                <h3>Solutions</h3>
+                <ul class="list-unstyled footer-nav-list mb-lg-0">
+                  <li><a href="https://techsavanna.co.ke/solutions/savanna-hrm/">WorkWise HRM</a></li>
+                  <li><a href="https://techsavanna.co.ke/solutions/savanna-crm/">Engage CRM</a></li>
+                  <li><a href="https://techsavanna.co.ke/solutions/savanna-pos/">SavannaPay POS</a></li>
+                  <li><a href="https://techsavanna.co.ke/solutions/savanna-erp/">Savanna360 ERP</a></li>
+                  <li><a href="https://techsavanna.co.ke/solution/savanna-bpo/">Savanna BPO</a></li>
+                  <li><a href="https://www.tsi.ac.ke/">Training &amp; Upskilling</a></li>
+                  <li><a href="https://techsavanna.co.ke/solution/bespoke/">Bespoke</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-4 mb-md-4 mb-lg-0">
+          <div class="footer-single-col">
+            <p>Our latest news, articles, and resources, will be sent to your inbox weekly.</p>
+            <form class="newsletter-form position-relative d-block d-lg-flex d-md-flex mt-3 mb-3">
+              <input type="text" class="input-newsletter form-control me-2" placeholder="Enter your email" name="email" required autocomplete="off">
+              <input type="submit" value="Subscribe" class="btn btn-primary mt-3 mt-lg-0 mt-md-0">
+            </form>
+            <div class="footer-single-col text-start">
+              <ul class="list-unstyled list-inline footer-social-list mb-0">
+                <li class="list-inline-item"><a href="https://www.facebook.com/TechsavannaL"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/techsavanna_software_company?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="https://x.com/techsavannal"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.linkedin.com/company/techsavanna/"><i class="fab fa-linkedin"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.tiktok.com/@techsavannaltd?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom bg-gradient text-white py-4">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-12">
+          <div class="copyright-text text-center">
+            <p class="mb-lg-0 mb-md-0">&copy; <script>document.write(new Date().getFullYear());</script> Techsavanna All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== TAWK.TO CHAT ==================== -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+(function(){
+  var s1 = document.createElement('script'), s0 = document.getElementsByTagName('script')[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/67ef71a8f99b5b19067e59ed/1invl7usk';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  // ═══════════════════════════════════════════
+  // 1. CUSTOM CURSOR + MOUSE GLOW
+  // ═══════════════════════════════════════════
+  var cursor = document.getElementById('tsCursor');
+  var cursorDot = document.getElementById('tsCursorDot');
+  var mouseGlow = document.getElementById('tsMouseGlow');
+  var mouseX = 0, mouseY = 0;
+  var cursorX = 0, cursorY = 0;
+  var dotX = 0, dotY = 0;
+  var glowX = 0, glowY = 0;
+
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Smooth cursor animation loop
+  function animateCursor() {
+    // Outer ring follows with delay
+    cursorX += (mouseX - cursorX) * 0.12;
+    cursorY += (mouseY - cursorY) * 0.12;
+    if (cursor) cursor.style.transform = 'translate(' + (cursorX - 10) + 'px,' + (cursorY - 10) + 'px)';
+
+    // Inner dot follows faster
+    dotX += (mouseX - dotX) * 0.35;
+    dotY += (mouseY - dotY) * 0.35;
+    if (cursorDot) cursorDot.style.transform = 'translate(' + (dotX - 3) + 'px,' + (dotY - 3) + 'px)';
+
+    // Glow follows with more delay
+    glowX += (mouseX - glowX) * 0.06;
+    glowY += (mouseY - glowY) * 0.06;
+    if (mouseGlow) mouseGlow.style.transform = 'translate(' + (glowX - 150) + 'px,' + (glowY - 150) + 'px)';
+
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Cursor active state on interactive elements
+  var interactives = document.querySelectorAll('a, button, input, .ts-magnetic, .sol-card, .ts-logo-card, .cta-card, .readmore');
+  interactives.forEach(function(el) {
+    el.addEventListener('mouseenter', function() { if(cursor) cursor.classList.add('active'); });
+    el.addEventListener('mouseleave', function() { if(cursor) cursor.classList.remove('active'); });
+  });
+
+  // ═══════════════════════════════════════════
+  // 2. MOUSE-MOVEMENT 3D TILT ON CARDS
+  // ═══════════════════════════════════════════
+  var tiltCards = document.querySelectorAll('.ts-tilt-card, .cta-card, .cert-section .connected-app-single, .single-article');
+  tiltCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -8;
+      var rotateY = ((x - centerX) / centerX) * 8;
+      card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale3d(1.02,1.02,1.02)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 3. HERO 3D PARALLAX ON MOUSE MOVE
+  // ═══════════════════════════════════════════
+  var heroSection = document.getElementById('heroSection');
+  var heroContent = document.getElementById('heroContent');
+  var heroVideoWrapper = document.getElementById('heroVideoWrapper');
+
+  if (heroSection) {
+    heroSection.addEventListener('mousemove', function(e) {
+      var rect = heroSection.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      if (heroContent) {
+        heroContent.style.transform = 'translate3d(' + (x * 20) + 'px,' + (y * 15) + 'px, 0) rotateX(' + (y * -3) + 'deg) rotateY(' + (x * 3) + 'deg)';
+      }
+      if (heroVideoWrapper) {
+        heroVideoWrapper.style.transform = 'translate3d(' + (x * -15) + 'px,' + (y * -10) + 'px, 0) rotateX(' + (y * 2) + 'deg) rotateY(' + (x * -2) + 'deg)';
+      }
+
+      // Move orbs with parallax
+      var orbs = heroSection.querySelectorAll('.hero-orb');
+      orbs.forEach(function(orb, i) {
+        var speed = (i + 1) * 15;
+        orb.style.transform = 'translate3d(' + (x * speed) + 'px,' + (y * speed) + 'px, 0)';
+      });
+    });
+    heroSection.addEventListener('mouseleave', function() {
+      if (heroContent) heroContent.style.transform = 'translate3d(0,0,0) rotateX(0) rotateY(0)';
+      if (heroVideoWrapper) heroVideoWrapper.style.transform = 'translate3d(0,0,0) rotateX(0) rotateY(0)';
+      var orbs = heroSection.querySelectorAll('.hero-orb');
+      orbs.forEach(function(orb) { orb.style.transform = 'translate3d(0,0,0)'; });
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // 4. GEOMETRIC SHAPES MOUSE REACTIVITY
+  // ═══════════════════════════════════════════
+  var geoShapes = document.querySelectorAll('.ts-geo-shape');
+  document.addEventListener('mousemove', function(e) {
+    var cx = window.innerWidth / 2;
+    var cy = window.innerHeight / 2;
+    var dx = (e.clientX - cx) / cx;
+    var dy = (e.clientY - cy) / cy;
+    geoShapes.forEach(function(shape, i) {
+      var factor = (i + 1) * 8;
+      shape.style.transform += ' translate3d(' + (dx * factor) + 'px,' + (dy * factor) + 'px, 0)';
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 5. INTERACTIVE PARTICLE NETWORK
+  // ═══════════════════════════════════════════
+  var canvas = document.getElementById('tsParticleCanvas');
+  if (canvas) {
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var particleCount = 60;
+    var maxDist = 150;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Create particles
+    for (var i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.4 + 0.1
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            var alpha = (1 - dist / maxDist) * 0.12;
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(13, 110, 253, ' + alpha + ')';
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw & update particles
+      for (var k = 0; k < particles.length; k++) {
+        var p = particles[k];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(13, 110, 253, ' + p.opacity + ')';
+        ctx.fill();
+
+        // Mouse repulsion/attraction
+        if (mouseX && mouseY) {
+          var mdx = p.x - mouseX;
+          var mdy = p.y - mouseY;
+          var mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mDist < 200) {
+            var force = (200 - mDist) / 200 * 0.02;
+            p.vx += mdx * force;
+            p.vy += mdy * force;
+          }
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Damping
+        p.vx *= 0.99;
+        p.vy *= 0.99;
+
+        // Wrap around
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+      }
+
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  }
+
+  // ═══════════════════════════════════════════
+  // 6. MAGNETIC BUTTONS
+  // ═══════════════════════════════════════════
+  var magnetics = document.querySelectorAll('.ts-magnetic');
+  magnetics.forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = 'translate(' + (x * 0.3) + 'px,' + (y * 0.3) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 7. SCROLL REVEAL
+  // ═══════════════════════════════════════════
+  var reveals = document.querySelectorAll('.ts-reveal, .ts-reveal-left, .ts-reveal-right');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  // ═══════════════════════════════════════════
+  // 8. HEADER SCROLL EFFECT
+  // ═══════════════════════════════════════════
+  var header = document.getElementById('headerArea');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 80) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // ═══════════════════════════════════════════
+  // 9. MOBILE MENU
+  // ═══════════════════════════════════════════
+  var mobileTrigger = document.getElementById('mobile-menu-trigger');
+  var mobileOverlay = document.getElementById('mobile-menu-overlay');
+  var mobileClose = document.getElementById('mobile-menu-close-trigger');
+
+  if (mobileTrigger) {
+    mobileTrigger.addEventListener('click', function() {
+      mobileOverlay.classList.add('active');
+    });
+  }
+  if (mobileClose) {
+    mobileClose.addEventListener('click', function() {
+      mobileOverlay.classList.remove('active');
+    });
+  }
+  // Close on outside click
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', function(e) {
+      if (e.target === mobileOverlay) mobileOverlay.classList.remove('active');
+    });
+  }
+  // Mobile submenu expand
+  var menuExpands = document.querySelectorAll('.offcanvas-navigation .menu-expand');
+  menuExpands.forEach(function(expand) {
+    expand.addEventListener('click', function() {
+      var sub = this.nextElementSibling;
+      while (sub && sub.tagName !== 'UL') sub = sub.nextElementSibling;
+      if (sub) {
+        sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 10. HERO SOUND TOGGLE
+  // ═══════════════════════════════════════════
+  var soundBtn = document.getElementById('soundToggleBtn');
+  var video = document.getElementById('heroVideo');
+  var muted = true;
+  if (soundBtn && video) {
+    soundBtn.addEventListener('click', function() {
+      muted = !muted;
+      video.muted = muted;
+      soundBtn.innerHTML = muted ? '&#128266; Sound Off' : '&#128263; Sound On';
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // 11. TYPING ANIMATION
+  // ═══════════════════════════════════════════
+  var words = ["ERP Systems", "Web Applications", "Mobile Applications", "Cloud Solutions", "E-Commerce Platforms", "Custom Software"];
+  var wordIndex = 0, charIndex = 0, isDeleting = false;
+  var typingSpeed = 90, deletingSpeed = 50, delayBetweenWords = 1200;
+  var typedText = document.getElementById("typedText");
+  function typeLoop() {
+    if (!typedText) return;
+    var currentWord = words[wordIndex];
+    if (!isDeleting) {
+      typedText.textContent = currentWord.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentWord.length) setTimeout(function() { isDeleting = true; }, delayBetweenWords);
+    } else {
+      typedText.textContent = currentWord.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; }
+    }
+    setTimeout(typeLoop, isDeleting ? deletingSpeed : typingSpeed);
+  }
+  typeLoop();
+
+  // ═══════════════════════════════════════════
+  // 12. SOLUTIONS CAROUSEL
+  // ═══════════════════════════════════════════
+  var track = document.getElementById('solTrack');
+  var dotsWrap = document.getElementById('solDots');
+  var slides = track ? track.querySelectorAll('.sol-slide') : [];
+  var dots = dotsWrap ? dotsWrap.querySelectorAll('.sol-dot') : [];
+  var current = 0;
+  var total = slides.length;
+
+  function goToSlide(index) {
+    if (index < 0) index = 0;
+    if (index >= total) index = total - 1;
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    dots.forEach(function(d) { d.classList.remove('active'); });
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+    current = index;
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() { goToSlide(parseInt(this.getAttribute('data-page'))); });
+  });
+
+  // Touch swipe
+  var touchStartX = 0;
+  if (track) {
+    track.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) goToSlide(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+  }
+
+  // Autoplay
+  var solAutoplayMs = 5000, solIv;
+  function solNext() {
+    var next = (current + 1) % total;
+    dots[next].click();
+  }
+  function solStart() { solIv = setInterval(solNext, solAutoplayMs); }
+  function solStop() { clearInterval(solIv); }
+  if (track) {
+    track.addEventListener('mouseenter', solStop);
+    track.addEventListener('mouseleave', solStart);
+    solStart();
+  }
+
+  // ═══════════════════════════════════════════
+  // 13. PARTNERS CAROUSEL
+  // ═══════════════════════════════════════════
+  var pDots = document.querySelectorAll('#tsDotsWrap .ts-dot');
+  var pPages = document.querySelectorAll('#tsPagesContainer .ts-page');
+  var pContainer = document.getElementById('tsPagesContainer');
+  var pCurrent = 0;
+
+  function pGoTo(index) {
+    if (index < 0) index = 0;
+    if (index >= pPages.length) index = pPages.length - 1;
+    pPages.forEach(function(p) { p.classList.remove('active'); });
+    pDots.forEach(function(d) { d.classList.remove('active'); });
+    pPages[index].classList.add('active');
+    pDots[index].classList.add('active');
+    pCurrent = index;
+  }
+
+  pDots.forEach(function(dot) {
+    dot.addEventListener('click', function() { pGoTo(parseInt(this.getAttribute('data-page'))); });
+  });
+
+  // Partners autoplay
+  var pAutoplayMs = 5000, pIv;
+  function pNext() { pDots[(pCurrent = (pCurrent + 1) % pDots.length)].click(); }
+  function pStart() { pIv = setInterval(pNext, pAutoplayMs); }
+  function pStop() { clearInterval(pIv); }
+  if (pContainer) {
+    pContainer.addEventListener('mouseenter', pStop);
+    pContainer.addEventListener('mouseleave', pStart);
+    pStart();
+  }
+
+  // ═══════════════════════════════════════════
+  // 14. SWIPER VIDEO CAROUSEL
+  // ═══════════════════════════════════════════
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.video-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { delay: 5000 },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // 15. OWL CAROUSEL (Testimonials & Certs)
+  // ═══════════════════════════════════════════
+  if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+    $(document).ready(function() {
+      if ($('.testimonal-section .testimonial').length) {
+        $('.testimonal-section .testimonial').owlCarousel({
+          loop: true, margin: 30, nav: true, dots: true,
+          autoplay: true, autoplayTimeout: 4000, autoplayHoverPause: true,
+          navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+          responsive: { 0: { items: 1 }, 768: { items: 2 }, 1024: { items: 2 } }
+        });
+      }
+      if ($('.client-slides-2').length) {
+        $('.client-slides-2').owlCarousel({
+          loop: true, margin: 25, nav: false, dots: false,
+          autoplay: true, autoplayTimeout: 3000, autoplayHoverPause: true,
+          responsive: { 0: { items: 2 }, 768: { items: 3 }, 1024: { items: 4 } }
+        });
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════
+  // 16. SMOOTH SCROLL PARALLAX ON SECTIONS
+  // ═══════════════════════════════════════════
+  var parallaxEls = document.querySelectorAll('[data-parallax]');
+  window.addEventListener('scroll', function() {
+    var scrollY = window.pageYOffset;
+    parallaxEls.forEach(function(el) {
+      var speed = parseFloat(el.getAttribute('data-parallax')) || 0.05;
+      el.style.transform = 'translate3d(0,' + (scrollY * speed * -1) + 'px, 0)';
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 17. LAZY LOAD IFRAMES
+  // ═══════════════════════════════════════════
+  var lazyIframes = document.querySelectorAll('iframe[data-src]');
+  var iframeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.getAttribute('data-src');
+        entry.target.removeAttribute('data-src');
+        iframeObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '100px' });
+  lazyIframes.forEach(function(iframe) { iframeObserver.observe(iframe); });
+
+  // ═══════════════════════════════════════════
+  // 18. ANIMATED STATS COUNTER
+  // ═══════════════════════════════════════════
+  // Counters animate from 0 to target value when scrolled into view
+  var statsSection = document.getElementById('tsStatsSection');
+  var counters = document.querySelectorAll('.ts-counter');
+  var statsAnimated = false; // Flag to ensure animation runs only once
+
+  // Animates a single counter from 0 to its data-target value
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var duration = 2000; // Total animation duration in ms
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease-out cubic for smooth deceleration
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target; // Ensure final value is exact
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  // IntersectionObserver triggers counter animation when stats section is visible
+  if (statsSection && counters.length) {
+    var statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !statsAnimated) {
+          statsAnimated = true;
+          counters.forEach(function(counter) { animateCounter(counter); });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(statsSection);
+  }
+
+  // 3D tilt on stat cards (follows mouse position for subtle depth effect)
+  var statCards = document.querySelectorAll('.ts-stat-card');
+  statCards.forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width - 0.5;
+      var y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = 'perspective(800px) rotateX(' + (y * -6) + 'deg) rotateY(' + (x * 6) + 'deg) translateY(-6px)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 19. FAQ ACCORDION (SINGLE-OPEN)
+  // ═══════════════════════════════════════════
+  // Only one FAQ item can be open at a time; clicking one closes others
+  var faqItems = document.querySelectorAll('.ts-faq-item');
+  faqItems.forEach(function(item) {
+    var question = item.querySelector('.ts-faq-question');
+    if (question) {
+      question.addEventListener('click', function() {
+        var isActive = item.classList.contains('active');
+        // Close all other FAQ items first
+        faqItems.forEach(function(otherItem) {
+          otherItem.classList.remove('active');
+        });
+        // Toggle the clicked item (open if it was closed)
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+
+  // ═══════════════════════════════════════════
+  // 20. RIPPLE EFFECT ON BUTTONS
+  // ═══════════════════════════════════════════
+  // Creates an expanding circle from click position that fades out
+  var rippleTargets = document.querySelectorAll('.hero-btn, .btn, .ts-magnetic, button[class*="btn"]');
+  rippleTargets.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left; // Click X relative to button
+      var y = e.clientY - rect.top;  // Click Y relative to button
+      var size = Math.max(rect.width, rect.height) * 2; // Ripple diameter covers button
+
+      var ripple = document.createElement('span');
+      ripple.className = 'ts-ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (x - size / 2) + 'px';
+      ripple.style.top = (y - size / 2) + 'px';
+      btn.appendChild(ripple);
+
+      // Remove ripple element after animation completes
+      ripple.addEventListener('animationend', function() {
+        ripple.remove();
+      });
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 21. PROGRESS BAR ANIMATION
+  // ═══════════════════════════════════════════
+  // Animate progress bars from 0% to their data-width value on scroll
+  var progressWrap = document.getElementById('tsProgressWrap');
+  var progressBars = document.querySelectorAll('.ts-progress-fill');
+  var progressAnimated = false; // Flag to animate only once
+
+  if (progressWrap && progressBars.length) {
+    var progressObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !progressAnimated) {
+          progressAnimated = true;
+          // Stagger animation slightly for visual appeal
+          progressBars.forEach(function(bar, index) {
+            setTimeout(function() {
+              bar.style.width = bar.getAttribute('data-width') + '%';
+            }, index * 200); // 200ms delay between each bar
+          });
+          progressObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    progressObserver.observe(progressWrap);
+  }
+
+  // ═══════════════════════════════════════════
+  // 22. SOLUTION CATEGORY TABS FILTER
+  // ═══════════════════════════════════════════
+  // Filter solution cards by category with smooth fade transitions
+  var solTabs = document.querySelectorAll('.ts-sol-tab');
+  var solCards = document.querySelectorAll('#tsSolGrid .ts-sol-filtered');
+
+  solTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var category = this.getAttribute('data-category');
+
+      // Update active tab styling
+      solTabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+
+      // Show/hide cards based on selected category
+      solCards.forEach(function(card) {
+        var cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.classList.remove('ts-hidden');
+          card.classList.add('ts-visible');
+        } else {
+          card.classList.remove('ts-visible');
+          card.classList.add('ts-hidden');
+        }
+      });
+    });
+  });
+
+  // ═══════════════════════════════════════════
+  // 23. FLIP CARD CLICK TOGGLE FOR MOBILE
+  // ═══════════════════════════════════════════
+  // On mobile (no hover), tapping toggles the flipped state
+  var flipCards = document.querySelectorAll('.ts-flip-card');
+  flipCards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      // Only toggle on touch devices where hover doesn't work
+      if (window.innerWidth <= 991) {
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
